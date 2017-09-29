@@ -1,3 +1,3 @@
 module.exports = {
-  Book: require("./book")
+  Sidekick_model: require("./Sidekick_model")
 };
