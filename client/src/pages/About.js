@@ -8,7 +8,7 @@ const About = () =>
   <div>
     <Hero backgroundImage="https://www.studying-in-germany.org/wp-content/uploads/2014/07/work-and-travel-germany-1.jpg">
       <h1>Sidekick</h1>
-      <h2>Live More With Others</h2>
+      <h2>Find Your Sidekick!</h2>
     </Hero>
     <Container style={{ marginTop: 30 }}>
       <Row>

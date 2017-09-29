@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import API from "../utils/API";
 import Container from "../components/Container";
+import Row from "../components/Row";
+import Col from "../components/Col";
 import Form from "../components/Form";
-import Alert from "../components/Alert";
 
 class Profile extends Component {
   state = {
@@ -38,17 +38,10 @@ class Profile extends Component {
   render() {
     return (
       <Container style={{ minHeight: "80%" }}>
-        <h1 className="text-center">Profile Information</h1>
-        <Alert
-          type="danger"
-          style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}
-        >
-          {this.state.error}
-        </Alert>
-        <Form
+        <h1 className="text-center" style={{ marginTop: 30 }}>Profile Information</h1>
+        <Form style={{ marginTop: 30 }}
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
-          breeds={this.state.breeds}
         />
       </Container>
     );
