@@ -1,3 +1,33 @@
-nav.navbar.navbar-default {
-  margin-bottom: 0;
+nav.navbar.navbar-fixed-top {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  background-color: #fff;
+}
+a.navbar-brand.navbar-link {
+
+	/*height: 0%;*/ 
+}
+
+ul.nav.navbar-nav{
+  float:right;
+
+
+}
+
+a {
+  color: #848484;
+
+
+}
+
+.navbar-fixed-top .navbar-brand {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+img{
+	height: 125%;
+
 }

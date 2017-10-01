@@ -1,9 +1,63 @@
 form.search {
   overflow: auto;
   margin-bottom: 10px;
+  
 }
 
 form.search button[type="submit"] {
   float: left;
-  margin-top: 10px;
 }
+
+
+.form-control {
+    background: #fff;
+    border: 1px solid #848484;
+    color: #848484;
+    font-size: 1em;
+    font-family: "arial", serif;
+    margin-right: .5rem;
+
+
+}
+
+
+#activity-input, #status-input{
+    background: #fff;
+    border: 1px solid #848484;
+    color: #848484;
+    font-size: 1em;
+    font-family: "arial", serif;
+    height: 3.25rem;
+    width: 20rem;
+    margin-right: .5rem;
+
+   
+}
+
+.form-control:focus{
+    border-bottom: 3px solid #000;
+
+}
+
+
+
+#activity-input:link {
+
+}
+
+.btn > .btn-default > .pull-left{
+ 	background: #fff;
+    border: 1px solid #848484;
+    color: #848484;
+
+}
+
+/*#status-input:hover {
+    background-color: #000000;
+    color: white;
+}
+
+#status-input:active {
+    background-color: #000000; 
+    color: white;
+}*/
