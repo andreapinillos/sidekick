@@ -39,9 +39,32 @@ class Home extends Component {
       zipcode: this.state.zipcode,
       activity: this.state.activity,
       status: this.state.status,//Pull set status from database--change status button will set this state.
-      sidekicks: sidekickPull.filter(sidekick => sidekick.zipcode == this.state.zipcode && sidekick.activity == this.state.activity)
+      // long turnery if statement that decides which way to filter the sidekicks array based on user input
+
+
+
+      // if(this.state.zipcode && (this.state.activity !="select")){
+      //   sidekickPull.filter(sidekick => (sidekick.zipcode == this.state.zipcode && sidekick.activity == this.state.activity));
+      // }
+      // else if(this.state.zipcode){
+      //   sidekickPull.filter(sidekick => (sidekick.zipcode == this.state.zipcode);
+      // }
+      // else if(sidekick.activity !="select"){
+      //   sidekickPull.filter(sidekick => (sidekick.activity == this.state.activity);
+      // }
+      // else{
+      //   sidekicks = sidekickPull
+      // } 
+
+
+      sidekicks: sidekickPull.filter(sidekick => 
+        (this.state.zipcode && (this.state.activity !="select")) ? (sidekick.zipcode == this.state.zipcode && sidekick.activity == this.state.activity) 
+        : (this.state.zipcode) ? (sidekick.zipcode == this.state.zipcode) 
+        : (this.state.activity !="select") ? sidekick.activity == this.state.activity 
+        : sidekick === sidekick)
     });
-  };
+    console.log(sidekickPull.filter(sidekick => sidekick === sidekick));
+  };  
 
    handleUpdate = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
@@ -52,7 +75,8 @@ class Home extends Component {
     this.setState({
       status: this.state.status//Pull set status from database--change status button will set this state.
     });
-  };
+  };   
+   
   render() {
     return (
       <Container style={{ minHeight: "80%" }}>

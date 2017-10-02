@@ -20,7 +20,6 @@ const Form = props =>
                 className="form-control"
                 placeholder="Zipcode"
               />
-      
           </Col>
 
           <Col size="md-4">
@@ -32,7 +31,7 @@ const Form = props =>
               type="text"
               value={props.activity}
               onChange={props.handleInputChange}>
-              <option selected>Select Activity</option>
+              <option selected value="select">Select Activity</option>
               <option value="hiking">Hiking</option>
               <option value="running">Running</option>
               <option value="dancing">Dancing</option>
