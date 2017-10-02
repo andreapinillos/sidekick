@@ -8,6 +8,7 @@ import Form from "../components/Form";
 import FriendCard from "../components/FriendCard";
 import sidekicks from "../components/friends.json";
 import List from "../components/List";
+import People from "../components/People"
 
 const sidekickPull = sidekicks;
 
@@ -16,6 +17,11 @@ class Home extends Component {
     sidekicks,
     zipcode: "",
     activity: "",
+    isloggedin: false
+    // userID,
+    // username,
+    // userpic,
+
     //status: ""//Pull and set status from database--change status button will set this state.
     };
 
@@ -40,23 +46,6 @@ class Home extends Component {
       activity: this.state.activity,
       status: this.state.status,//Pull set status from database--change status button will set this state.
       // long turnery if statement that decides which way to filter the sidekicks array based on user input
-
-
-
-      // if(this.state.zipcode && (this.state.activity !="select")){
-      //   sidekickPull.filter(sidekick => (sidekick.zipcode == this.state.zipcode && sidekick.activity == this.state.activity));
-      // }
-      // else if(this.state.zipcode){
-      //   sidekickPull.filter(sidekick => (sidekick.zipcode == this.state.zipcode);
-      // }
-      // else if(sidekick.activity !="select"){
-      //   sidekickPull.filter(sidekick => (sidekick.activity == this.state.activity);
-      // }
-      // else{
-      //   sidekicks = sidekickPull
-      // } 
-
-
       sidekicks: sidekickPull.filter(sidekick => 
         (this.state.zipcode && (this.state.activity !="select")) ? (sidekick.zipcode == this.state.zipcode && sidekick.activity == this.state.activity) 
         : (this.state.zipcode) ? (sidekick.zipcode == this.state.zipcode) 
@@ -91,7 +80,7 @@ class Home extends Component {
             {this.state.sidekicks.length ? (
             <List>
             {this.state.sidekicks.map(sidekick => (
-              <FriendCard 
+              <People 
                   name = {sidekick.name} 
                   activity = {sidekick.activity}
                   bio = {sidekick.bio}

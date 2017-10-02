@@ -1,0 +1,25 @@
+img {
+	width: 180px;
+	height: 180px;
+	margin: 2%;
+}
+
+.card {
+	border: 1px solid #eeeeee;
+	margin-top: 2%;
+}
+
+.card-block {
+	background-color: #FEB273;
+	color: white;
+	border-right: 1px solid #eeeeee;
+	border-left: 1px solid #eeeeee;
+	border-bottom: 1px solid #eeeeee;
+}
+
+.container {
+	margin-top: 1%;
+	padding-left: 5%;
+	padding-right: 5%;
+	margin-bottom: 5%;
+}
