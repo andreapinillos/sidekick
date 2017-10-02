@@ -7,14 +7,15 @@ import Form from "../components/Form";
 //import { CardList, CardItem } from "../components/Card";
 import FriendCard from "../components/FriendCard";
 import sidekicks from "../components/friends.json";
+import List from "../components/List";
 
-
+const sidekickPull = sidekicks;
 
 class Home extends Component {
   state = {
     sidekicks,
-    //zipcode: "",
-    //activity: "",
+    zipcode: "",
+    activity: "",
     //status: ""//Pull and set status from database--change status button will set this state.
     };
 
@@ -37,7 +38,8 @@ class Home extends Component {
     this.setState({
       zipcode: this.state.zipcode,
       activity: this.state.activity,
-      status: this.state.status//Pull set status from database--change status button will set this state.
+      status: this.state.status,//Pull set status from database--change status button will set this state.
+      sidekicks: sidekickPull.filter(sidekick => sidekick.zipcode == this.state.zipcode && sidekick.activity == this.state.activity)
     });
   };
 
@@ -62,6 +64,8 @@ class Home extends Component {
         />
       <Row>
         <Col size="lg-12">
+            {this.state.sidekicks.length ? (
+            <List>
             {this.state.sidekicks.map(sidekick => (
               <FriendCard 
                   name = {sidekick.name} 
@@ -71,6 +75,10 @@ class Home extends Component {
                   key = {sidekick.id}                  
               />
             ))}
+            </List>
+            ) : (
+            <h3>No Results to Display</h3>
+            )}
         </Col>
 
       </Row>
@@ -90,7 +98,7 @@ class Home extends Component {
         //         {this.state.sidekicks.map(sidekick => (
         //           <CardItem key={sidekick._id}>
         //               name = {sidekick.name} 
-        //               activyt = {sidekick.activity}
+        //               activity = {sidekick.activity}
         //               zipcode = {sidekick.zipcode}
         //           </CardItem>
         //         ))}

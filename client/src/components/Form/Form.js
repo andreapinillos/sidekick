@@ -34,7 +34,7 @@ const Form = props =>
               onChange={props.handleInputChange}>
               <option selected>Select Activity</option>
               <option value="hiking">Hiking</option>
-              <option value="running">Runnning</option>
+              <option value="running">Running</option>
               <option value="dancing">Dancing</option>
               <option value="rock climbing">Rock Climbing</option>
             </select>
