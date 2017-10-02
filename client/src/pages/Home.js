@@ -5,7 +5,6 @@ import Row from "../components/Row";
 import Col from "../components/Col";
 import Form from "../components/Form";
 //import { CardList, CardItem } from "../components/Card";
-import FriendCard from "../components/FriendCard";
 import sidekicks from "../components/friends.json";
 import List from "../components/List";
 import People from "../components/People"

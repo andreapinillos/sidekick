@@ -16,12 +16,6 @@ const Navbar = props =>
       </div>
 
       <ul className="nav navbar-nav">
-    
-      <li
-          className={window.location.pathname === "/login" ? "active" : ""}
-        >
-          <Link to="/login">Login</Link>
-        </li>
         <li>
           <Social />
         </li>
