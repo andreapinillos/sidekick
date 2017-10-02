@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import img from './sidekick.svg';
+import Social from '../social'
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 const Navbar = props =>
@@ -16,16 +17,13 @@ const Navbar = props =>
 
       <ul className="nav navbar-nav">
     
-        <li
-          className={window.location.pathname === "/create" ? "active" : ""}
-        >
-          <Link to="/create">Sign up</Link>
-        </li>
-        
-        <li
+      <li
           className={window.location.pathname === "/login" ? "active" : ""}
         >
           <Link to="/login">Login</Link>
+        </li>
+        <li>
+          <Social />
         </li>
 
       </ul>
