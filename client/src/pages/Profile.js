@@ -3,13 +3,13 @@ import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
 import Form from "../components/Form";
+import Bio from "../components/Bio";
+
 
 class Profile extends Component {
   state = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    shortBio: ""
+    bio: "",
+
   };
 
   handleInputChange = event => {
@@ -27,23 +27,21 @@ class Profile extends Component {
     event.preventDefault();
 
     // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
-    alert(`Hello ${this.state.firstName} ${this.state.lastName}! Your email is: ${this.state.email} and your short bio is: ${this.state.shortBio}`);
+    alert(`Hello ${this.state.bio}`);
     this.setState({
-      firstName: "",
-      lastName: "",
-      email: "",
-      shortBio: ""
+      bio: "",
+
     });
   };
   render() {
     return (
-      <Container style={{ minHeight: "80%" }}>
-        <h1 className="text-center" style={{ marginTop: 30 }}>Profile Information</h1>
-        <Form style={{ marginTop: 30 }}
+        <Bio style={{ marginTop: 30 }}
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
+          handleUpdate={this.handleUpdate}
         />
-      </Container>
+
+
     );
   }
 }
