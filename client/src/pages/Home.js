@@ -4,17 +4,18 @@ import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
 import Form from "../components/Form";
-import { CardList, CardItem } from "../components/Card";
-
+//import { CardList, CardItem } from "../components/Card";
+import FriendCard from "../components/FriendCard";
+import sidekicks from "../components/friends.json";
 
 
 
 class Home extends Component {
   state = {
-    sidekicks: [],
-    zipcode: "",
-    activity: "",
-    status: ""//Pull and set status from database--change status button will set this state.
+    sidekicks,
+    //zipcode: "",
+    //activity: "",
+    //status: ""//Pull and set status from database--change status button will set this state.
     };
 
   handleInputChange = event => {
@@ -58,15 +59,21 @@ class Home extends Component {
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
           handleUpdate={this.handleUpdate}
-
         />
+      <Row>
+        <Col size="lg-12">
+            {this.state.sidekicks.map(sidekick => (
+              <FriendCard 
+                  name = {sidekick.name} 
+                  activity = {sidekick.activity}
+                  bio = {sidekick.bio}
+                  image={sidekick.image}
+                  key = {sidekick.id}                  
+              />
+            ))}
+        </Col>
 
-
-
-      <div className="row">
-
-
-      </div>
+      </Row>
       </Container>
     );
   }
@@ -74,22 +81,24 @@ class Home extends Component {
 
 
 
+// <Link to={"/sidekicks/" + sidekick._id}>
+// <ConnectBtn />
+//</Link>
+        // <Col size="md-6">
+        //   {this.state.sidekicks.length ? (
+        //    <CardList>
+        //         {this.state.sidekicks.map(sidekick => (
+        //           <CardItem key={sidekick._id}>
+        //               name = {sidekick.name} 
+        //               activyt = {sidekick.activity}
+        //               zipcode = {sidekick.zipcode}
+        //           </CardItem>
+        //         ))}
+        //       </CardList> 
+        //       ) : (
+        //     <h3>No Results to Display</h3>
+        //   )}
+        // </Col>
 
-/*  
-           <CardList>
-                {this.state.sidekicks.map(book => (
-                  <CardItem key={sidekick._id}>
-                    <Link to={"/sidekicks/" + sidekick._id}>
-                      <strong>
-                        {sidekick.name} 
-                        {sidekick.status}
-                        {sidekick.author}
-                        {sidekick.author}
-                      </strong>
-                    </Link>
-                    <ConnectBtn />
-                  </CardItem>
-                ))}
-              </CardList>*/
 
 export default Home;
