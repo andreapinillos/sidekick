@@ -1,6 +1,8 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import FacebookLogin from 'react-facebook-login';
- 
+import "./social.css";
+
 class Social extends React.Component {
   responseFacebook(response) {
     console.log(response)
@@ -10,9 +12,12 @@ class Social extends React.Component {
     return (
       <FacebookLogin
         appId="1271186439693753"
+        scope="public_profile,email"
         autoLoad={true}
         fields="name,email,picture"
         callback={this.responseFacebook}
+        cssClass="my-facebook-button-class"
+        icon="fa-facebook"
       />
     )
   }
