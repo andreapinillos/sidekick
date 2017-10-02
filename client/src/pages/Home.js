@@ -64,7 +64,17 @@ class Home extends Component {
 
 
       <div className="row">
-
+          <CardList>
+                {this.state.sidekicks.map(book => (
+                  <CardItem>
+                      <strong>
+                        {this.state.zipcode} 
+                        {this.state.activity}
+                        {this.state.status}
+                      </strong>
+                  </CardItem>
+                ))}
+              </CardList>
 
       </div>
       </Container>

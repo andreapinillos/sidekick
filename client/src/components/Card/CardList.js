@@ -3,7 +3,7 @@ import "./Card.css";
 import CardItem from "./CardItem";
 
 // 
-const CardList = props => /*{
+const CardList = ( { children } ) => /*{
   const carditems = props.video.map((sidekick) => {
     return <cardItem key={sidekick._id} card= {sidekick} />
 
@@ -12,6 +12,7 @@ const CardList = props => /*{
 
 
      <div className = "row">
+     {children}
      </div>
 
      ;

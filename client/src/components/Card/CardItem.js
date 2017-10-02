@@ -8,7 +8,7 @@ const CardItem = props =>
 
 
       <Col size="md-4">
-      
+      {props.children}
       </Col>;
 
 
