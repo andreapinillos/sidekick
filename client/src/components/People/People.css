@@ -1,12 +1,11 @@
 img {
-	width: 180px;
-	height: 180px;
-	margin: 2%;
+	width: 150px;
+	height: 150px;
 }
 
 .card {
 	border: 1px solid #eeeeee;
-	margin-top: 2%;
+	margin-top: 6%;
 }
 
 .card-block {
@@ -17,9 +16,3 @@ img {
 	border-bottom: 1px solid #eeeeee;
 }
 
-.container {
-	margin-top: 1%;
-	padding-left: 5%;
-	padding-right: 5%;
-	margin-bottom: 5%;
-}

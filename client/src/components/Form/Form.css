@@ -27,7 +27,7 @@ form.search button[type="submit"] {
     color: #848484;
     font-size: 1em;
     font-family: "arial", serif;
-    height: 3.25rem;
+    height: 3.95rem;
     width: 20rem;
     margin-right: .5rem;
 
@@ -49,6 +49,11 @@ form.search button[type="submit"] {
  	background: #fff;
     border: 1px solid #848484;
     color: #848484;
+
+}
+
+button {
+        
 
 }
 
