@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import FacebookLogin from 'react-facebook-login';
+import "./social.css";
 
 class Social extends React.Component {
   responseFacebook(response) {
