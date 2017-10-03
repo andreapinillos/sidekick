@@ -6,7 +6,8 @@ const sidekickSchema = new Schema({
   picture: { type: String, required: true },
   bio: String,
   email: { type: String, required: true },
-  zip: { type: Number, required: true, min: 5, max: 5 },
+  activity: {type: String, required:true },
+  zipcode: { type: Number, required: true, min: 5, max: 5 },
   last_login: { type: Date, default: Date.now }
 });
 

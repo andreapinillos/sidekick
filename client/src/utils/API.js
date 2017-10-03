@@ -3,13 +3,16 @@ import axios from "axios";
 // Export an object containing methods we'll use for accessing the Dog.Ceo API
 
 export default {
-  getRandomDog: function() {
-    return axios.get("https://dog.ceo/api/breeds/image/random");
+  // Gets all user
+  getSkicks: function() {
+    return axios.get("/api/users");
   },
-  getDogsOfBreed: function(breed) {
-    return axios.get("https://dog.ceo/api/breed/" + breed + "/images");
+  // Gets the user with the given id
+  getSkick: function(id) {
+    return axios.get("/api/users/" + id);
   },
-  getBaseBreedsList: function() {
-    return axios.get("https://dog.ceo/api/breeds/list");
+  // Saves a user to the database
+  saveSkick: function(userData) {
+    return axios.post("/api/users", userData);
   }
 };

@@ -9,7 +9,7 @@
     "start": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon\" \"npm run client\"",
     "build": "cd client && npm run build",
     "deploy": "npm run build && git add . && git commit -m \"Building for production\" && git push heroku master",
-    "seed": "node scripts/seedDB",
+    "seed": "node seedDB",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

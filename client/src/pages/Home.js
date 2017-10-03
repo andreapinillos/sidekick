@@ -1,19 +1,21 @@
 import React, { Component } from "react";
-import Hero from "../components/Hero";
+// import Hero from "../components/Hero";
 import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
 import Form from "../components/Form";
-//import { CardList, CardItem } from "../components/Card";
-import sidekicks from "../components/friends.json";
+import sidekicksjson from "../components/friends.json";
 import List from "../components/List";
 import People from "../components/People"
+import API from "../utils/API";
 
-const sidekickPull = sidekicks;
+
+var sidekickPull = sidekicksjson;
+
 
 class Home extends Component {
   state = {
-    sidekicks,
+    sidekicks:sidekickPull,
     zipcode: "",
     activity: "",
     isloggedin: false
@@ -23,6 +25,17 @@ class Home extends Component {
 
     //status: ""//Pull and set status from database--change status button will set this state.
     };
+
+  componentDidMount() {
+    this.loadSkicks();
+  }
+
+  loadSkicks = () => {
+    API.getSkicks()
+      .then(res => this.setState({ sidekicks: res.data }))
+      .then(console.log("in the log" +this.state.sidekicks))
+      .catch(err => console.log(err));
+  };    
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
@@ -46,9 +59,9 @@ class Home extends Component {
       status: this.state.status,//Pull set status from database--change status button will set this state.
       // long turnery if statement that decides which way to filter the sidekicks array based on user input
       sidekicks: sidekickPull.filter(sidekick => 
-        (this.state.zipcode && (this.state.activity !="select")) ? (sidekick.zipcode == this.state.zipcode && sidekick.activity == this.state.activity) 
-        : (this.state.zipcode) ? (sidekick.zipcode == this.state.zipcode) 
-        : (this.state.activity !="select") ? sidekick.activity == this.state.activity 
+        (this.state.zipcode && (this.state.activity !=="select")) ? (sidekick.zipcode === this.state.zipcode && sidekick.activity === this.state.activity) 
+        : (this.state.zipcode) ? (sidekick.zipcode === this.state.zipcode) 
+        : (this.state.activity !=="select") ? sidekick.activity === this.state.activity 
         : sidekick === sidekick)
     });
     console.log(sidekickPull.filter(sidekick => sidekick === sidekick));
@@ -84,7 +97,8 @@ class Home extends Component {
                   activity = {sidekick.activity}
                   bio = {sidekick.bio}
                   image={sidekick.image}
-                  key = {sidekick.id}                  
+                  key = {sidekick.id}
+                  href = {"/users/" + sidekick.id}                  
               />
             ))}
             </List>
@@ -98,27 +112,5 @@ class Home extends Component {
     );
   }
 }
-
-
-
-// <Link to={"/sidekicks/" + sidekick._id}>
-// <ConnectBtn />
-//</Link>
-        // <Col size="md-6">
-        //   {this.state.sidekicks.length ? (
-        //    <CardList>
-        //         {this.state.sidekicks.map(sidekick => (
-        //           <CardItem key={sidekick._id}>
-        //               name = {sidekick.name} 
-        //               activity = {sidekick.activity}
-        //               zipcode = {sidekick.zipcode}
-        //           </CardItem>
-        //         ))}
-        //       </CardList> 
-        //       ) : (
-        //     <h3>No Results to Display</h3>
-        //   )}
-        // </Col>
-
 
 export default Home;

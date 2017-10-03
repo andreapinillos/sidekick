@@ -7,10 +7,10 @@ router.route("/")
   .post(sidekickController.create);
 
 // Matches with "/api/users/:id"
-router
-  .route("/:id")
-  .get(sidekickController.findById)
-  .put(sidekickController.update)
-  .delete(sidekickController.remove);
+// router
+//   .route("/:id")
+//   .get(sidekickController.findById)
+//   .put(sidekickController.update)
+//   .delete(sidekickController.remove);
 
 module.exports = router;
