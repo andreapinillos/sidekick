@@ -5,6 +5,7 @@ import "./Myprofile.css";
 const Myprofile = props =>
 
 <div className="container">
+<div className="myprofilecontainer">
 <h1 id="changeinfo">Update your Information</h1>
 
 <div className="row">
@@ -20,7 +21,7 @@ const Myprofile = props =>
     <div className="row">
       <div className="col-md-4">
           <div className="form-group">
-              <label for="bio">Bio</label>
+              <label for="bio" style={{fontFamily:'Roboto'}}>Bio</label>
                 <textarea 
                 className="bio form-control" 
                 rows="5"
@@ -33,13 +34,13 @@ const Myprofile = props =>
               <button
                 type="submit"
                 onClick={props.handleFormSubmit}
-                className="btn btn-default"
+                className="btn btn-default pull-right"
                       >
                 Update
               </button>
           </div>
       </div>
-
+  < br />
       <div className="col-md-4">
         <div className="input-group">
           <input value={props.zipcode}
@@ -58,7 +59,6 @@ const Myprofile = props =>
           </span>
         </div>
       </div>
-
       <div className="col-md-4">
         <div className="form-group">
           <span className="pull-left">
@@ -88,7 +88,7 @@ const Myprofile = props =>
       </div>
     </div>
   </form>
-
+</div>
 </div>
 
 

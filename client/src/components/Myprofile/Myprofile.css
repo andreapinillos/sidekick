@@ -3,7 +3,7 @@
 }
 
 #changeinfo {
-    padding-top: 4%;
+    padding-top: 5%;
     padding-bottom: 5%;
     text-align: center;
     font-family: 'Roboto', sans-serif;
@@ -20,14 +20,17 @@
     width: 20rem;
     margin-right: 3.0rem;
 	margin-right: 0rem;
-	margin-top: 2.6rem;
+	margin-top: 5rem;
 }
 
 .input-group {
-	margin-top: 2.6rem;
+    margin-top: 5rem;
 }
 
 #activitybtn {
-	margin-top: 2.6rem;
+    margin-top: 5rem;
 }
 
+.myprofilecontainer {
+    text-align: center;
+}
