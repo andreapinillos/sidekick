@@ -5,10 +5,10 @@ import "./Myprofile.css";
 const Myprofile = props =>
 
 <div className="container">
-<h1>Chage your Info</h1>
+<h1>Change your Info</h1>
 
 <div className="row">
-  <div className="col-sm-6">
+  <div className="col-sm-4">
     User picture goes here
   </div>
   <div className="col-sm-6">
