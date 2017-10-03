@@ -1,12 +1,12 @@
 .footer {
   min-height: 100px;
-  background: #EEEEEE;
+  background: #feb273;
   position: relative;
   text-align: center;
 }
 
 .footer span {
-  font-size: 70%;
+  font-size: 100%;
   position: absolute;
   top: 40%;
   left: 0;
