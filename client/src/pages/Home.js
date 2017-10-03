@@ -11,11 +11,11 @@ import API from "../utils/API";
 
 
 var sidekickPull = sidekicksjson;
-
+//var sidekickPull = [];
 
 class Home extends Component {
   state = {
-    sidekicks:sidekickPull,
+    sidekicks:[],
     zipcode: "",
     activity: "",
     isloggedin: false
@@ -34,7 +34,8 @@ class Home extends Component {
     API.getSkicks()
       .then(res => this.setState({ sidekicks: res.data }))
       .then(console.log("in the log" +this.state.sidekicks))
-      .catch(err => console.log(err));
+      .catch(err => console.log(err)); 
+    //var sidekickPull = this.state.sidekicks;  
   };    
 
   handleInputChange = event => {

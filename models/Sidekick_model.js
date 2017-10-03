@@ -11,6 +11,6 @@ const sidekickSchema = new Schema({
   last_login: { type: Date, default: Date.now }
 });
 
-const Sidekick_model = mongoose.model("Sidekick", sidekickSchema);
+const Sidekick_model = mongoose.model("Sidekick_model", sidekickSchema);
 
 module.exports = Sidekick_model;
