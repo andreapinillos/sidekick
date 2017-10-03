@@ -5,7 +5,7 @@ import "./Myprofile.css";
 const Myprofile = props =>
 
 <div className="container">
-<h1>Chage your Info</h1>
+<h1 id="changeinfo">Chage your Info</h1>
 
 <div className="row">
   <div className="col-sm-6">
@@ -18,17 +18,17 @@ const Myprofile = props =>
 
   <form className="myprofile" style={{ marginTop: 30}}>
     <div className="row">
-      <div className="col-sm-4">
+      <div className="col-md-4">
           <div className="form-group">
               <label for="bio">Bio</label>
-              <textarea 
-              className="bio" 
-              rows="5"
-              value={props.bio}
-              onChange={props.handleInputChange}
-              name="bio"
-              type="text"
-              placeholder={props.bio} />
+                <textarea 
+                className="bio form-control" 
+                rows="5"
+                value={props.bio}
+                onChange={props.handleInputChange}
+                name="bio"
+                type="text"
+                placeholder={props.bio}/>
 
               <button
                 type="submit"
@@ -39,31 +39,32 @@ const Myprofile = props =>
               </button>
           </div>
       </div>
-      <div className="col-sm-4">
-          <div className="form-group">             
-              <input
-                value={props.zipcode}
-                onChange={props.handleInputChange}
-                name="zipcode"
-                type="number"
-                className="form-control"
-                placeholder="Zipcode"
-              />
-              <button
+
+      <div className="col-md-4">
+        <div className="input-group">
+          <input value={props.zipcode}
+            onChange={props.handleInputChange}
+            name="zipcode"
+            type="number"
+            className="form-control"
+            placeholder="Zipcode" />
+          <span className="input-group-btn">
+            <button 
               type="submit"
               onClick={props.handleFormSubmit}
-              className="btn btn-default"
-                    >
-              Update
+              className="btn btn-default">
+                Update
             </button>
-          </div>
+          </span>
+        </div>
       </div>
-      <div className="col-sm-4">
+
+      <div className="col-md-4">
         <div className="form-group">
           <span className="pull-left">
             <select 
                 className="selectpicker" 
-                id="activity-input"
+                id="pactivity-input"
                 name="activity"
                 type="text"
                 value={props.activity}
@@ -78,7 +79,8 @@ const Myprofile = props =>
               <button
                 type="submit"
                 onClick={props.handleFormSubmit}
-                className="btn btn-default"
+                className="btn btn-default pull-left"
+                id="activitybtn"
                       >
                 Update
               </button>
@@ -86,6 +88,7 @@ const Myprofile = props =>
       </div>
     </div>
   </form>
+
 </div>
 
 
