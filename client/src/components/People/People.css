@@ -1,6 +1,9 @@
-img {
-	width: 150px;
-	height: 150px;
+.profimg {
+    margin-right: 25%;
+    margin-left: 25%;
+    width: 50%;
+    height:200px;
+    padding:10px;
 }
 
 .card {
