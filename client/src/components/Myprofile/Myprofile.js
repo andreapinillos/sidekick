@@ -5,7 +5,7 @@ import "./Myprofile.css";
 const Myprofile = props =>
 
 <div className="container">
-<h1 id="changeinfo">Chage your Info</h1>
+<h1 id="changeinfo">Update your Information</h1>
 
 <div className="row">
   <div className="col-sm-6">
