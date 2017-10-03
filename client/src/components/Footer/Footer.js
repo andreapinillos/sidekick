@@ -3,7 +3,7 @@ import "./Footer.css";
 
 const Footer = () =>
   <footer className="footer">
-    <span>Sidekick 2017</span>
+    <span>Sidekick &copy; 2017 Aimila M, Anstasia, Andrea P, Dain L, Steven R </span>
   </footer>;
 
 export default Footer;

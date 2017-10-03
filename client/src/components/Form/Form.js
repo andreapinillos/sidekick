@@ -10,7 +10,7 @@ const Form = props =>
     <div className="form-group">
 
        <div className="row">
-          <Col size="-12 md-4">
+          <Col size="xs-4">
               
               <input
                 value={props.zipcode}
@@ -21,7 +21,7 @@ const Form = props =>
                 placeholder="Zipcode"
               />
           </Col>
-          <Col size="-12 md-6">
+          <Col size="md-6">
             <span className="pull-left">
             <select 
               className="selectpicker" 
@@ -37,16 +37,16 @@ const Form = props =>
               <option value="rock climbing">Rock Climbing</option>
             </select>
               </span>
-
+            
                <button
                   type="submit"
                   onClick={props.handleFormSubmit}
-                  className="btn btn-default pull-left"
+                  className="btn btn-default"
                 >
                   Search
                 </button>
-          </Col>
-      </div>
+  </Col>
+                </div>
     </div>
 
 </form>

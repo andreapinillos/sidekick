@@ -1,14 +1,15 @@
 .profimg {
     margin-right: 25%;
     margin-left: 25%;
-    width: 50%;
-    height:200px;
+    height: 180px;
+    width: 150px;
     padding:10px;
 }
 
 .card {
 	border: 1px solid #eeeeee;
 	margin-top: 6%;
+	height: 200px;
 }
 
 .card-block {
@@ -17,5 +18,15 @@
 	border-right: 1px solid #eeeeee;
 	border-left: 1px solid #eeeeee;
 	border-bottom: 1px solid #eeeeee;
+	line-height: 30px;
+	padding: 5%;
+	height: 200px;
+	margin-bottom: 5%;
+	font-family: 'Roboto', sans-serif;
 }
 
+.cardbox:hover {
+    box-shadow: 0px 0px 35px -12px #888888;
+    display: block;
+
+}

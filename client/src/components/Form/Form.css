@@ -5,33 +5,30 @@ form.search {
 }
 
 form.search button[type="submit"] {
-  float: left;
 }
 
 
 .form-control {
     background: #fff;
-    border: 1px solid #848484;
+    border: 1px solid #eeeeee;
     color: #848484;
     font-size: 1em;
-    font-family: "arial", serif;
     margin-right: .5rem;
-
+    font-family: 'Roboto', sans-serif;
 
 }
 
 
 #activity-input, #status-input{
     background: #fff;
-    border: 1px solid #848484;
+    border: 1px solid #eeeeee;
     color: #848484;
     font-size: 1em;
-    font-family: "arial", serif;
+    font-family: 'Roboto', sans-serif;
     height: 3.95rem;
     width: 20rem;
-    margin-right: .5rem;
-
-   
+    margin-right: 3.0rem;
+  
 }
 
 .form-control:focus{
@@ -39,23 +36,22 @@ form.search button[type="submit"] {
 
 }
 
-
-
 #activity-input:link {
 
 }
 
-.btn > .btn-default > .pull-left{
- 	background: #fff;
-    border: 1px solid #848484;
-    color: #848484;
 
+.btn {
+    background-color: #FEB273;
+    margin-top: 0rem;
+    border: #eeeeee;
+    font-family: 'Roboto', sans-serif;
 }
 
-button {
-        
-
+.btn:hover {
+    background-color: #EBA56C;
 }
+
 
 /*#status-input:hover {
     background-color: #000000;
