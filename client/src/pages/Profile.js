@@ -9,11 +9,11 @@ import API from "../utils/API";
 
 class Profile extends Component {
   state = {
-    username: "Anastasia Mark",
+    name: "Anastasia Mark",
     id: "10159562313540601",
     email: "omishark@gmail.com",
     bio: "",
-    picture: "http://rs845.pbsrc.com/albums/ab16/Zets773/wee_ninja_new.jpg?w=280&h=210&fit=crop",
+    image: "http://rs845.pbsrc.com/albums/ab16/Zets773/wee_ninja_new.jpg?w=280&h=210&fit=crop",
     zipcode: "",
     activity: ""
   };
@@ -34,7 +34,15 @@ class Profile extends Component {
 
     // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
     alert(`Your name is ${this.state.username} bio is ${this.state.bio} with current activity being ${this.state.activity} in this zip ${this.state.zipcode}`);
-    API.saveSkick(this.state)
+    API.saveSkick({
+      name: this.state.name,
+      id: this.state.id,
+      email: this.state.email,
+      bio: this.state.bio,
+      image: this.state.image,
+      zipcode: this.state.zipcode,
+      activity: this.state.activity
+    })
     .catch(err => console.log(err));
 
   };

@@ -15,7 +15,7 @@ var sidekickPull = sidekicksjson;
 
 class Home extends Component {
   state = {
-    sidekicks:sidekickPull,
+    sidekicks: [],
     zipcode: "",
     activity: "",
     isloggedin: false

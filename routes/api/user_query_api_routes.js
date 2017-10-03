@@ -6,7 +6,7 @@ router.route("/")
   .get(sidekickController.findAll)
   .post(sidekickController.create);
 
-// Matches with "/api/users/:id"
+//Matches with "/api/users/:id"
 router
   .route("/:id")
   .get(sidekickController.findById)
@@ -14,3 +14,6 @@ router
   .delete(sidekickController.remove);
 
 module.exports = router;
+
+
+
