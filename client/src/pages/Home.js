@@ -87,6 +87,7 @@ class Home extends Component {
           handleInputChange={this.handleInputChange}
           handleUpdate={this.handleUpdate}
         />
+<<<<<<< HEAD
       <Row>
         <Col size="lg-12">
             {this.state.sidekicks.length ? (
@@ -108,6 +109,25 @@ class Home extends Component {
         </Col>
 
       </Row>
+=======
+
+
+
+      <div className="row">
+          <CardList>
+                {this.state.sidekicks.map(book => (
+                  <CardItem>
+                      <strong>
+                        {this.state.zipcode} 
+                        {this.state.activity}
+                        {this.state.status}
+                      </strong>
+                  </CardItem>
+                ))}
+              </CardList>
+
+      </div>
+>>>>>>> df039959b2eb99792d0489ed66b4fa586eb312bc
       </Container>
     );
   }
