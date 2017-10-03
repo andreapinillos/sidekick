@@ -1,17 +1,19 @@
 const mongoose = require("mongoose");
-const db = require("../models");
+const db = require("./models");
 mongoose.Promise = global.Promise;
 
 // This file empties the Books collection and inserts the books below
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist",
+  process.env.MONGODB_URI || "mongodb://localhost/sidekickDB",
   {
     useMongoClient: true
   }
 );
 
-const bookSeed = [
+console.log("you are in the seeds file");
+
+const sidekickseed = [
   {
     "id": 1,
     "name": "SpongeBob",
@@ -99,3 +101,16 @@ const bookSeed = [
     "activity": "rock climbing",
     "zipcode": "20009"  }
 ]
+
+
+db.Sidekick_model
+  .remove({})
+  .then(() => db.Sidekick_model.collection.insertMany(sidekickseed))
+  .then(data => {
+    console.log(data.insertedIds.length + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
