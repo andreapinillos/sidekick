@@ -21,15 +21,12 @@ class User extends Component {
       .catch(err => console.log(err));
   };
 
-  sendemail() {
+  sendemail = () =>{
     console.log ("you are in sendemail");
-    //console.log("this is " + this.state.sidekick.bio);
-    // var tosend = {
-    //   id: this.state.sidekick._id,
-    //   email: this.state.sidekick.email
-    // }
+    console.log("this is " + this.state.sidekick.bio);
     var tosend = {
-      id: 123
+      id: this.state.sidekick._id,
+      recipientemail: this.state.sidekick.email
     }
     console.log("the var id is " + tosend.id)
     API.submitemail(tosend)

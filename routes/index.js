@@ -22,7 +22,7 @@ router.use("/api", apiRoutes);
 //send email route
 router.route("/send")
 	.get(function(req, res) {
-		console.log("you are in get on the server")
+		console.log("you are in get on the server email is " + req)
 		var mailOptions={
 			to : "almira1612@gmail.com",
 			from : "receiver@sender.com",
