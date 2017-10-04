@@ -24,24 +24,20 @@ class User extends Component {
 
       <Container>
 
-       <Row> Name </Row>
-       <Row> Image</Row>
-       <Row> Bio </Row>
+       <Row> Name: {this.state.sidekick.name}</Row>
+       <Row> Image: <img src={this.state.sidekick.image} alt="User pic" height="200" width="200"/></Row>
+       <Row> Bio: {this.state.sidekick.bio} </Row>
         
 
 
       
         
 
-      <button onclick="location.href='mailto:em@i.l';">send mail</button>
+      {/*  <button onClick="location.href='mailto:em@i.l';">send mail</button>*/}
 
       </Container>
     );
   }
 }
-
-    {/*  <Row> {this.props.name} Name </Row>
-       <Row>{this.props.image}  Image</Row>
-       <Row>{this.props.bio} Bio </Row>*/}
 
 export default User;

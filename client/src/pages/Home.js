@@ -97,8 +97,8 @@ class Home extends Component {
                   activity = {sidekick.activity}
                   bio = {sidekick.bio}
                   image={sidekick.image}
-                  key = {sidekick.id}
-                  href = {"/users/" + sidekick.id}                  
+                  key = {sidekick._id}
+                  href = {"/users/" + sidekick._id}                  
               />
             ))}
             </List>
