@@ -24,7 +24,7 @@ const Userprofile = props =>
       			
       		<Row>		
       		<div className="col-md-12">
-                      <div className="bio"> 
+                      <div className="userbio"> 
                     {props.bio}
                       </div>
              </div>
@@ -32,7 +32,7 @@ const Userprofile = props =>
 
     		 <button 
         	type="submit"
-         	className="btn btn-default"
+         	className="btn btn-default userbtn"
     	 	onClick={props.onclick}>send email</button>      
     </div> 
 
