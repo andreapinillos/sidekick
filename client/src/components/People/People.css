@@ -9,20 +9,25 @@
 .card {
 	border: 1px solid #eeeeee;
 	margin-top: 6%;
-	height: 200px;
+	height: 190px;
+	border-radius: 5px;
 }
 
 .card-block {
-	background-color: #FEB273;
+	background-color: #6986CA;
 	color: white;
 	border-right: 1px solid #eeeeee;
 	border-left: 1px solid #eeeeee;
 	border-bottom: 1px solid #eeeeee;
 	line-height: 30px;
 	padding: 5%;
-	height: 200px;
 	margin-bottom: 5%;
-	font-family: 'Roboto', sans-serif;
+	width: 100%;
+	border-radius: 5px;
+}
+
+.cardbox {
+	margin-bottom: 3%;
 }
 
 .cardbox:hover {
@@ -30,3 +35,16 @@
     display: block;
 
 }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 0.95;
+}
+
+
