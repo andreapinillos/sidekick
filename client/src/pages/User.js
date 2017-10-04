@@ -24,14 +24,23 @@ class User extends Component {
 
       <Container>
 
-       <Row> Name: {this.state.sidekick.name}</Row>
-       <Row> Image: <img src={this.state.sidekick.image} alt="User pic" height="200" width="200"/></Row>
-       <Row> Bio: {this.state.sidekick.bio} </Row>
+
         
+        <Userprofile
+
+          name = {this.state.sidekick.name} 
+          activity = {this.state.sidekick.activity}
+          bio = {this.state.sidekick.bio}
+          zipcode = {this.state.sidekick.zipcode}
+          image={this.state.sidekick.image} 
+
+          />
 
 
       
-        
+               {/*<Row> Name: {this.state.sidekick.name}</Row>
+       <Row> Image: <img src={this.state.sidekick.image} alt="User pic" height="200" width="200"/></Row>
+       <Row> Bio: {this.state.sidekick.bio} </Row>*/}
 
       {/*  <button onClick="location.href='mailto:em@i.l';">send mail</button>*/}
 
