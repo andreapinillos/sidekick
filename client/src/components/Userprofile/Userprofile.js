@@ -10,7 +10,7 @@ const Userprofile = props =>
 
            <div className="col-md-4">
           	<div className="biopic">
-<img src={props.image} alt="User pic"/>              </div>
+            <img src={props.image} alt="User pic"/>              </div>
              </div> 
 
              <div className="col-md-8">

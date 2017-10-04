@@ -3,6 +3,7 @@ import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
 import Userprofile from "../components/Userprofile";
+//import EmailBtn from "../components/EmailBtn";
 import API from "../utils/API";
 import ReactDOM from 'react-dom';
 import FacebookLogin from 'react-facebook-login';
@@ -36,17 +37,14 @@ class User extends Component {
 
   responseFacebook(response) {
     console.log(response)
-    
+
   }
 
   render() {
 
      return ( 
 
-      <Container>
-
-
-        
+      <Container>        
         <Userprofile
 
           name = {this.state.sidekick.name} 
