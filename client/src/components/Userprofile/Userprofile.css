@@ -6,23 +6,27 @@
 
 }
 
-.head {
+.userhead {
 	font-size: 2.3em;
 	font-family: 'Montserrat', sans-serif;
 	letter-spacing:.1em;
 	font-weight: 300;
 	color: #000;
-
-
+	text-align: left;
 
 
 }
 
+.userpictures {
+	height: 90%;
+}
 
-.subhead {
+
+.usersubhead {
 	font-size: 1.3em;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 300;
+	text-align: left;
 
 
 }
@@ -32,23 +36,26 @@
 	width: 100%;
 	font-size: 1.2em;
 	font-weight: 300;
+	text-align: left;
 }
 
-.activity {
+.useractivity {
 	font-size: 1.8em;
 	font-weight: 300;
+	text-align: left;
+
 
 }
 
 
-
-.col-md-12{
-
-
+.userprofilecont {
+	text-align: center;
+	margin-top: 7rem;
 }
 
 .userbtn {
 	margin-top: 15px;
+	float: left;
 
 
 

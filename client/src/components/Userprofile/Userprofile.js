@@ -6,19 +6,19 @@ import "./Userprofile.css";
 
 const Userprofile = props =>
  
+ <div className="userprofilecont">
     <Row>
-
-           <div className="col-md-4">
+           <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
           	<div className="biopic">
-            <img src={props.image} alt="User pic"/>              </div>
+            <img className="userpictures" src={props.image} alt="User pic"/>              </div>
              </div> 
 
-             <div className="col-md-8">
+             <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
           <Row>
                 <div className="col-md-12">
-                <div className="head">{props.name}</div>
-         		<div className="activity">{props.activity}</div>
-              	<div className="subhead">{props.zipcode}</div>
+                <div className="userhead">{props.name}</div>
+         		<div className="useractivity">{props.activity}</div>
+              	<div className="usersubhead">{props.zipcode}</div>
       			</div>
           </Row>
       			
@@ -36,7 +36,8 @@ const Userprofile = props =>
     	 	onClick={props.onclick}>send email</button>      
     </div> 
 
-    </Row>;
+    </Row>
+</div>;
 
 
 export default Userprofile;
