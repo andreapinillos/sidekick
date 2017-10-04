@@ -21,6 +21,9 @@ const Myprofile = props =>
         Name: {props.name}
       </div>
       <div className="well">
+        Bio: {props.bio}
+      </div>
+      <div className="well">
         Activity: {props.activity}
       </div>
       <div className="well">
