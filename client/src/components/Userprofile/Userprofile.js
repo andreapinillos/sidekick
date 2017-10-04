@@ -33,10 +33,12 @@ const Userprofile = props =>
     		 <button 
         	type="submit"
          	className="btn btn-default"
-    	 	onclick="location.href='mailto:em@i.l';">send email</button>      
+    	 	onClick={props.onclick}>send email</button>      
     </div> 
 
     </Row>;
 
 
 export default Userprofile;
+
+      <button onClick={this.sendemail}>send mail</button>

@@ -11,7 +11,7 @@ class User extends Component {
     sidekick: {}
   };
   // When this component mounts, grab the book with the _id of this.props.match.params.id
-  // e.g. localhost:3000/books/599dcb67f0f16317844583fc
+  // e.g. localhost:3000/users/599dcb67f0f16317844583fc
   componentDidMount() {
     API.getSkick(this.props.match.params.id)
       .then(res => this.setState({ sidekick: res.data }))
@@ -20,14 +20,17 @@ class User extends Component {
 
   sendemail() {
     console.log ("you are in sendemail");
-    console.log("this is " + this.sidekick);
+    //console.log("this is " + this.state.sidekick.bio);
+    // var tosend = {
+    //   id: this.state.sidekick._id,
+    //   email: this.state.sidekick.email
+    // }
     var tosend = {
-      id: this.state.sidekick._id,
-      email: this.state.sidekick.email
+      id: 123
     }
     console.log("the var id is " + tosend.id)
     API.submitemail(tosend)
-  }.bind(this)
+  }
 
 
   render() {
@@ -45,19 +48,9 @@ class User extends Component {
           bio = {this.state.sidekick.bio}
           zipcode = {this.state.sidekick.zipcode}
           image={this.state.sidekick.image} 
+          onclick = {this.sendemail}
 
           />
-
-
-      
-<<<<<<< HEAD
-      <button onClick={this.sendemail}>send mail</button>
-        
-=======
-               {/*<Row> Name: {this.state.sidekick.name}</Row>
-       <Row> Image: <img src={this.state.sidekick.image} alt="User pic" height="200" width="200"/></Row>
-       <Row> Bio: {this.state.sidekick.bio} </Row>*/}
->>>>>>> 8e0d1ea8df105afff705d361d3f2611a1e82f276
 
 
       </Container>
