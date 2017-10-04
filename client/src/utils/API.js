@@ -14,5 +14,16 @@ export default {
   // Saves a user to the database
   saveSkick: function(userData) {
     return axios.post("/api/users", userData);
+  },
+  submitemail: function(emaildata) {
+    console.log("sent to api.js was " + emaildata);
+    return axios.get("/send", "lipsum texty", function(emaildata){
+        if(emaildata=="sent"){
+          console.log("you sent stuff")
+        }
+        else{
+          console.log("you didn't send")
+        }
+    })
   }
 };

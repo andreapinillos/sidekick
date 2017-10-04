@@ -15,7 +15,8 @@ class Profile extends Component {
     bio: "this bio state has not been changed",
     image: "http://rs845.pbsrc.com/albums/ab16/Zets773/wee_ninja_new.jpg?w=280&h=210&fit=crop",
     zipcode: "00000",
-    activity: "hiking"
+    activity: "hiking",
+    isloggedin: true
   };
 
   handleInputChange = event => {

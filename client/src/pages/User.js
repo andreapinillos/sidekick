@@ -16,7 +16,19 @@ class User extends Component {
     API.getSkick(this.props.match.params.id)
       .then(res => this.setState({ sidekick: res.data }))
       .catch(err => console.log(err));
-  }
+  };
+
+  sendemail() {
+    console.log ("you are in sendemail");
+    console.log("this is " + this.sidekick);
+    var tosend = {
+      id: this.state.sidekick._id,
+      email: this.state.sidekick.email
+    }
+    console.log("the var id is " + tosend.id)
+    API.submitemail(tosend)
+  }.bind(this)
+
 
   render() {
 
@@ -31,9 +43,9 @@ class User extends Component {
 
 
       
+      <button onClick={this.sendemail}>send mail</button>
         
 
-      {/*  <button onClick="location.href='mailto:em@i.l';">send mail</button>*/}
 
       </Container>
     );
