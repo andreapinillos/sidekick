@@ -1,23 +1,42 @@
 import React from "react";
 import Col from "../Col";
+import Row from "../Row";
 import Container from "../Container";
 import "./Userprofile.css";
 
 const Userprofile = props =>
  
-    <div className="row">
+    <Row>
 
-        <div className="col-sm-4">
-          Profile Pic
-        </div>
+           <div className="col-md-4">
+          	<div className="biopic">
+<img src={props.image} alt="User pic"/>              </div>
+             </div> 
 
-        <div className="col-sm-8">
-      
-        </div>
+             <div className="col-md-8">
+          <Row>
+                <div className="col-md-12">
+                <div className="head">{props.name}</div>
+         		<div className="activity">{props.activity}</div>
+              	<div className="subhead">{props.zipcode}</div>
+      			</div>
+          </Row>
+      			
+      		<Row>		
+      		<div className="col-md-12">
+                      <div className="bio"> 
+                    {props.bio}
+                      </div>
+             </div>
+            </Row>
 
-    </div>
+    		 <button 
+        	type="submit"
+         	className="btn btn-default"
+    	 	onclick="location.href='mailto:em@i.l';">send email</button>      
+    </div> 
 
-
+    </Row>;
 
 
 export default Userprofile;

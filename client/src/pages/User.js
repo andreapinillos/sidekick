@@ -36,15 +36,28 @@ class User extends Component {
 
       <Container>
 
-       <Row> Name: {this.state.sidekick.name}</Row>
-       <Row> Image: <img src={this.state.sidekick.image} alt="User pic" height="200" width="200"/></Row>
-       <Row> Bio: {this.state.sidekick.bio} </Row>
+
         
+        <Userprofile
+
+          name = {this.state.sidekick.name} 
+          activity = {this.state.sidekick.activity}
+          bio = {this.state.sidekick.bio}
+          zipcode = {this.state.sidekick.zipcode}
+          image={this.state.sidekick.image} 
+
+          />
 
 
       
+<<<<<<< HEAD
       <button onClick={this.sendemail}>send mail</button>
         
+=======
+               {/*<Row> Name: {this.state.sidekick.name}</Row>
+       <Row> Image: <img src={this.state.sidekick.image} alt="User pic" height="200" width="200"/></Row>
+       <Row> Bio: {this.state.sidekick.bio} </Row>*/}
+>>>>>>> 8e0d1ea8df105afff705d361d3f2611a1e82f276
 
 
       </Container>
