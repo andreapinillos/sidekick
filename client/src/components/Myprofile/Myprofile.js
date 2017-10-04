@@ -2,12 +2,14 @@ import React from "react";
 import Col from "../Col";
 import "./Myprofile.css";
 
+
+
 const Myprofile = props =>
 
 <div className="container">
 <div className="myprofilecontainer">
 <h1 id="changeinfo">Update your Information</h1>
-
+  
 <div className="row">
   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
     <a className="thumbnail fancybox" rel="ligthbox" href="http://placehold.it/300x320.png">
@@ -16,13 +18,13 @@ const Myprofile = props =>
   </div>
   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
       <div className="well">
-        Name:
+        Name: {props.name}
       </div>
       <div className="well">
-        Activity:
+        Activity: {props.activity}
       </div>
       <div className="well">
-        Zipcode:
+        Zipcode: {props.zipcode}
       </div>
   </div>  
 </div>

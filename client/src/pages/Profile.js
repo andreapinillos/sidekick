@@ -12,10 +12,10 @@ class Profile extends Component {
     name: "Anastasia Mark",
     id: "10159562313540601",
     email: "omishark@gmail.com",
-    bio: "",
+    bio: "this bio state has not been changed",
     image: "http://rs845.pbsrc.com/albums/ab16/Zets773/wee_ninja_new.jpg?w=280&h=210&fit=crop",
-    zipcode: "",
-    activity: ""
+    zipcode: "00000",
+    activity: "hiking"
   };
 
   handleInputChange = event => {
@@ -52,6 +52,12 @@ class Profile extends Component {
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
           handleUpdate={this.handleUpdate}
+          name= {this.state.name}
+          email= {this.state.email}
+          bio= {this.state.bio}
+          image= {this.state.image}
+          zipcode= {this.state.zipcode}
+          activity= {this.state.activity}
         />
 
     );
