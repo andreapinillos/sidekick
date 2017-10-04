@@ -12,8 +12,8 @@ const Myprofile = props =>
   
 <div className="row">
   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-    <a className="thumbnail fancybox" rel="ligthbox" href="http://placehold.it/300x320.png">
-        <img className="img-responsive" alt="" src="{props.image}" />
+    <a className="thumbnail fancybox" rel="ligthbox" href={props.image}>
+        <img className="img-responsive" alt="nothing to display" src={props.image} />
     </a>
   </div>
   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -21,7 +21,7 @@ const Myprofile = props =>
         Name: {props.name}
       </div>
       <div className="well">
-        Bio: {props.bio}
+        Email: {props.email}
       </div>
       <div className="well">
         Activity: {props.activity}
@@ -36,15 +36,15 @@ const Myprofile = props =>
     <div className="row">
       <div className="col-md-4">
           <div className="form-group biogroup">
-              <label for="bio" style={{fontFamily:'Roboto'}}>Bio</label>
+              <label for="bio" style={{fontFamily:'Roboto'}}>Email</label>
                 <textarea 
                 className="bio form-control" 
-                rows="5"
-                value={props.bio}
+                rows="1"
+                value={props.email}
                 onChange={props.handleInputChange}
-                name="bio"
+                name="email"
                 type="text"
-                placeholder={props.bio}/>
+                placeholder={props.email}/>
 
               <button
                 type="submit"

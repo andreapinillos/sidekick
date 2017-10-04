@@ -52,7 +52,7 @@ class Profile extends Component {
     
     this.setState({
       name: response.name,
-      bio: response.email,
+      email: response.email,
       image:response.picture.data.url
     });
   }    
