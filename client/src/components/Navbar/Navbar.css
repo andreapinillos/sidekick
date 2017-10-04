@@ -12,14 +12,8 @@ a.navbar-brand.navbar-link {
 ul.nav.navbar-nav{
   float:right;
 
-
 }
 
-a {
-  color: #848484;
-
-
-}
 
 .navbar-fixed-top .navbar-brand {
   display: flex;
@@ -31,3 +25,28 @@ img{
 	height: 125%;
 
 }
+
+#profilelink {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  background-color: white;
+  border: none;
+  color: #FEB273;
+
+}
+
+#profilelink:hover {
+    color: #EBA56C;
+}
+
+
+@media screen and (max-width: 640px) {
+  
+  img {
+    height:100%;
+  }
+
+}
+
+
+

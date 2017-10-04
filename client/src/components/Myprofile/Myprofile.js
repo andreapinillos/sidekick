@@ -9,18 +9,28 @@ const Myprofile = props =>
 <h1 id="changeinfo">Update your Information</h1>
 
 <div className="row">
-  <div className="col-sm-6">
-    User picture goes here
+  <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <a className="thumbnail fancybox" rel="ligthbox" href="http://placehold.it/300x320.png">
+        <img className="img-responsive" alt="" src="http://placehold.it/320x320" />
+    </a>
   </div>
-  <div className="col-sm-6">
-    User information goes here
+  <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <div className="well">
+        Name:
+      </div>
+      <div className="well">
+        Activity:
+      </div>
+      <div className="well">
+        Zipcode:
+      </div>
   </div>  
 </div>
 
   <form className="myprofile" style={{ marginTop: 30}}>
     <div className="row">
       <div className="col-md-4">
-          <div className="form-group">
+          <div className="form-group biogroup">
               <label for="bio" style={{fontFamily:'Roboto'}}>Bio</label>
                 <textarea 
                 className="bio form-control" 

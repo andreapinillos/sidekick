@@ -34,3 +34,15 @@
 .myprofilecontainer {
     text-align: center;
 }
+
+.well {
+    border: none;
+    background-color: white;
+    text-align: left;
+}
+
+.biogroup {
+    margin-top: 4.4rem;
+}
+
+
