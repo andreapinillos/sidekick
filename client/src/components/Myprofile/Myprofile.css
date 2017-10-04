@@ -33,6 +33,7 @@
 
 .myprofilecontainer {
     text-align: center;
+
 }
 
 .well {
@@ -43,6 +44,11 @@
 
 .biogroup {
     margin-top: 4.4rem;
+}
+
+.img-responsive {
+    height: 100%;
+    width: 100%;
 }
 
 

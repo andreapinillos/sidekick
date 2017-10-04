@@ -11,12 +11,12 @@ const Myprofile = props =>
 <h1 id="changeinfo">Update your Information</h1>
   
 <div className="row">
-  <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+  <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
     <a className="thumbnail fancybox" rel="ligthbox" href={props.image}>
         <img className="img-responsive" alt="nothing to display" src={props.image} />
     </a>
   </div>
-  <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+  <div className="col-xs-9 col-sm-9 col-md-9 col-lg-9">
       <div className="well">
         Name: {props.name}
       </div>
