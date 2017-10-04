@@ -13,7 +13,7 @@ const Myprofile = props =>
 <div className="row">
   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
     <a className="thumbnail fancybox" rel="ligthbox" href="http://placehold.it/300x320.png">
-        <img className="img-responsive" alt="" src="http://placehold.it/320x320" />
+        <img className="img-responsive" alt="" src="{props.image}" />
     </a>
   </div>
   <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">

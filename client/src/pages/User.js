@@ -4,7 +4,9 @@ import Row from "../components/Row";
 import Col from "../components/Col";
 import Userprofile from "../components/Userprofile";
 import API from "../utils/API";
-
+import ReactDOM from 'react-dom';
+import FacebookLogin from 'react-facebook-login';
+import "./social.css";
 
 class User extends Component {
   state = {
@@ -32,6 +34,10 @@ class User extends Component {
     API.submitemail(tosend)
   }
 
+  responseFacebook(response) {
+    console.log(response)
+    
+  }
 
   render() {
 
@@ -52,6 +58,15 @@ class User extends Component {
 
           />
 
+      <FacebookLogin
+        appId="1271186439693753"
+        scope="public_profile,email"
+        autoLoad={true}
+        fields="name,email,picture"
+        callback={this.responseFacebook}
+        cssClass="my-facebook-button-class"
+        icon="fa-facebook"
+      />
 
       </Container>
     );

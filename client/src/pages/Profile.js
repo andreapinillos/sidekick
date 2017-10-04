@@ -1,19 +1,19 @@
 import React, { Component } from "react";
-// import Container from "../components/Container";
-// import Row from "../components/Row";
-// import Col from "../components/Col";
-// import Form from "../components/Form";
 import Myprofile from "../components/Myprofile";
 import API from "../utils/API";
+import FacebookLogin from 'react-facebook-login';
+import Container from "../components/Container";
+
+import "./social.css";
 
 
 class Profile extends Component {
   state = {
-    name: "Anastasia Mark",
+    name: "",
     id: "10159562313540601",
-    email: "omishark@gmail.com",
+    email: "",
     bio: "this bio state has not been changed",
-    image: "http://rs845.pbsrc.com/albums/ab16/Zets773/wee_ninja_new.jpg?w=280&h=210&fit=crop",
+    image: "",
     zipcode: "00000",
     activity: "hiking",
     isloggedin: true
@@ -45,21 +45,44 @@ class Profile extends Component {
       activity: this.state.activity
     })
     .catch(err => console.log(err));
-
   };
+
+  responseFacebook = (response) => {
+    console.log(response)
+    
+    this.setState({
+      name: response.name,
+      bio: response.email
+    });
+  }    
+
+
   render() {
     return (
-        <Myprofile style={{ marginTop: 30 }}
-          handleFormSubmit={this.handleFormSubmit}
-          handleInputChange={this.handleInputChange}
-          handleUpdate={this.handleUpdate}
-          name= {this.state.name}
-          email= {this.state.email}
-          bio= {this.state.bio}
-          image= {this.state.image}
-          zipcode= {this.state.zipcode}
-          activity= {this.state.activity}
+      <Container>
+          <Myprofile style={{ marginTop: 30 }}
+            handleFormSubmit={this.handleFormSubmit}
+            handleInputChange={this.handleInputChange}
+            handleUpdate={this.handleUpdate}
+            name= {this.state.name}
+            email= {this.state.email}
+            bio= {this.state.bio}
+            image= {this.state.image}
+            zipcode= {this.state.zipcode}
+            activity= {this.state.activity}
+          />
+      
+          <FacebookLogin
+          appId="1271186439693753"
+          scope="public_profile,email"
+          autoLoad={true}
+          fields="name,email,picture"
+          callback={this.responseFacebook}
+          cssClass="my-facebook-button-class"
+          icon="fa-facebook"
         />
+      </Container>
+  
 
     );
   }

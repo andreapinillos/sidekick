@@ -8,6 +8,7 @@ import sidekicksjson from "../components/friends.json";
 import List from "../components/List";
 import People from "../components/People"
 import API from "../utils/API";
+import Social from '../components/social'
 
 
 var sidekickPull = sidekicksjson;
@@ -87,6 +88,7 @@ class Home extends Component {
           handleInputChange={this.handleInputChange}
           handleUpdate={this.handleUpdate}
         />
+        <Social />
       <Row>
         <Col size="lg-12">
             {this.state.sidekicks.length ? (
