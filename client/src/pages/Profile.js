@@ -53,9 +53,10 @@ class Profile extends Component {
   responseFacebook = (response) => {
     console.log(response)
     this.setState({
+      id: response.id,
       name: response.name,
       email: response.email,
-      image:response.picture.data.url
+      // image:response.picture.data.url
     });
   }    
 
@@ -76,6 +77,7 @@ class Profile extends Component {
             name= {this.state.name}
             email= {this.state.email}
             bio= {this.state.bio}
+            id= {this.state.id}
             image= {this.state.image}
             zipcode= {this.state.zipcode}
             activity= {this.state.activity}
@@ -152,6 +154,7 @@ class Profile extends Component {
                       </button>
                     </li>
                     <li>
+            
                
                     </li>
                   </ul>
