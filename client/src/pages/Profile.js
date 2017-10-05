@@ -39,7 +39,7 @@ class Profile extends Component {
     alert(`Your name is ${this.state.name} bio is ${this.state.bio} with current activity being ${this.state.activity} in this zip ${this.state.zipcode}`);
     API.saveSkick({
       name: this.state.name,
-      id: this.state.id,
+      id: this.state._id,
       email: this.state.email,
       bio: this.state.bio,
       image: this.state.image,
