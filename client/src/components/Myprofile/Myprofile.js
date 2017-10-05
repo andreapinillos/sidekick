@@ -24,6 +24,9 @@ const Myprofile = props =>
         Email: {props.email}
       </div>
       <div className="well">
+        About me: {props.bio}
+      </div>
+      <div className="well">
         Activity: {props.activity}
       </div>
       <div className="well">
@@ -36,7 +39,7 @@ const Myprofile = props =>
     <div className="row">
       <div className="col-md-4">
           <div className="form-group biogroup">
-              <label for="bio" style={{fontFamily:'Roboto'}}>Email</label>
+              <label for="email" style={{fontFamily:'Roboto'}}>Email</label>
                 <textarea 
                 className="bio form-control" 
                 rows="1"
@@ -102,6 +105,31 @@ const Myprofile = props =>
          </div>
       </div>
     </div>
+
+        <div className="row">
+      <div className="col-md-8">
+          <div className="form-group biogroup">
+              <label for="bio" style={{fontFamily:'Roboto'}}>About me</label>
+                <textarea 
+                className="bio form-control" 
+                rows="5"
+                value={props.bio}
+                onChange={props.handleInputChange}
+                name="bio"
+                type="text"
+                placeholder={props.bio}/>
+
+              <button
+                type="submit"
+                onClick={props.handleFormSubmit}
+                className="btn btn-default pull-right"
+                      >
+                Update
+              </button>
+          </div>
+      </div>
+    </div>
+
   </form>
 </div>
 </div>

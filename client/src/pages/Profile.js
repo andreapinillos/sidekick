@@ -12,12 +12,12 @@ import "./social.css";
 class Profile extends Component {
   state = {
     name: "",
-    id: "10159562313540601",
+    id: "",
     email: "",
-    bio: "this bio state has not been changed",
+    bio: "",
     image: "",
-    zipcode: "00000",
-    activity: "hiking",
+    zipcode: "",
+    activity: "",
     isloggedin: true
   };
 
