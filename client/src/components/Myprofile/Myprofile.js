@@ -39,7 +39,7 @@ const Myprofile = props =>
     <div className="row">
       <div className="col-md-4">
           <div className="form-group biogroup">
-              <label for="email" style={{fontFamily:'Roboto'}}>Email</label>
+              <label for="email" style={{fontFamily:'Montserrat'}}>Email</label>
                 <textarea 
                 className="bio form-control" 
                 rows="1"
@@ -109,7 +109,7 @@ const Myprofile = props =>
         <div className="row">
       <div className="col-md-8">
           <div className="form-group biogroup">
-              <label for="bio" style={{fontFamily:'Roboto'}}>About me</label>
+              <label for="bio" style={{fontFamily:'Montserrat'}}>About me</label>
                 <textarea 
                 className="bio form-control" 
                 rows="5"
@@ -130,8 +130,8 @@ const Myprofile = props =>
       </div>
   < br />
           <div className="col-md-4">
-        <div className="form-group biogroup">
-        <label for="image" style={{fontFamily:'Roboto'}}>Change Image</label>
+        <div className="form-group biogroup" id="uploadpic">
+        <label for="image" style={{fontFamily:'Montserrat'}}>Change Image</label>
            <input 
                className="bio form-control" 
                 id="Attachment" 
@@ -144,8 +144,7 @@ const Myprofile = props =>
               <button
                 type="submit"
                 onClick={props.handleFormSubmit}
-                className="btn btn-default pull-left"
-                id="activitybtn"
+                className="btn btn-default pull-right"
                       >
                 Update
               </button>
