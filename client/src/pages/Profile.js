@@ -39,7 +39,7 @@ class Profile extends Component {
     alert(`Your name is ${this.state.name} bio is ${this.state.bio} with current activity being ${this.state.activity} in this zip ${this.state.zipcode}`);
     API.saveSkick({
       name: this.state.name,
-      id: this.state._id,
+      id: this.state.id,
       email: this.state.email,
       bio: this.state.bio,
       image: this.state.image,
@@ -50,11 +50,12 @@ class Profile extends Component {
   };
 
   responseFacebook = (response) => {
-    console.log(response)
+    console.log(response);
     this.setState({
+      id: response.id,
       name: response.name,
       email: response.email,
-      image:response.picture.data.url
+      // image:response.picture.data.url
     });
   }    
 
@@ -69,6 +70,7 @@ class Profile extends Component {
             name= {this.state.name}
             email= {this.state.email}
             bio= {this.state.bio}
+            id= {this.state.id}
             image= {this.state.image}
             zipcode= {this.state.zipcode}
             activity= {this.state.activity}
@@ -90,6 +92,11 @@ class Profile extends Component {
               <div id="navbar" className="navbar-collapse collapse">
                   <ul className="nav navbar-nav navbar-right">
                     <li>
+                      <button id="profilelink">
+                        <a href="/profile" className="aproflink">Profile</a>
+                      </button>
+                    </li>
+                    <li>
                       <FacebookLogin
                       appId="1271186439693753"
                       scope="public_profile,email"
@@ -99,11 +106,6 @@ class Profile extends Component {
                       cssClass="my-facebook-button-class"
                       icon="fa-facebook"
                       />
-                    </li>
-                    <li>
-                      <button id="profilelink">
-                        <a href="/profile" className="aproflink">Profile</a>
-                      </button>
                     </li>
                   </ul>
               </div>

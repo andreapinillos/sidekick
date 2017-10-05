@@ -28,7 +28,7 @@ class User extends Component {
 
   sendemail = () =>{
     var tosend = {
-      idrecip: this.state.sidekick._id,
+      idrecip: this.props.match.params.id,
       senderemail: this.state.senderemail
     }
     console.log ("you are in sendemail and this will be sent: " + JSON.stringify(tosend));
@@ -81,6 +81,11 @@ class User extends Component {
               <div id="navbar" className="navbar-collapse collapse">
                   <ul className="nav navbar-nav navbar-right">
                     <li>
+                      <button id="profilelink">
+                        <a href="/profile" className="aproflink">Profile</a>
+                      </button>
+                    </li>
+                    <li>
                       <FacebookLogin
                       appId="1271186439693753"
                       scope="public_profile,email"
@@ -90,11 +95,6 @@ class User extends Component {
                       cssClass="my-facebook-button-class"
                       icon="fa-facebook"
                       />
-                    </li>
-                    <li>
-                      <button id="profilelink">
-                        <a href="/profile" className="aproflink">Profile</a>
-                      </button>
                     </li>
                   </ul>
               </div>
