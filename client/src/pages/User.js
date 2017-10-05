@@ -28,7 +28,7 @@ class User extends Component {
 
   sendemail = () =>{
     var tosend = {
-      idrecip: this.props.match.params.id,
+      idrecip: this.state.sidekick._id,
       senderemail: this.state.senderemail
     }
     console.log ("you are in sendemail and this will be sent: " + JSON.stringify(tosend));

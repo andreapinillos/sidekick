@@ -16,7 +16,7 @@ export default {
     return axios.post("/api/users", userData);
   },
   submitemail: function(emaildata) {
-    console.log("sent to api.js was " + emaildata);
+    console.log("sent to api.js was " + JSON.stringify(emaildata));
     return axios.post("/send", emaildata);
   }
 };
