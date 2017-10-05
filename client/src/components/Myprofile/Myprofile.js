@@ -39,8 +39,9 @@ const Myprofile = props =>
     <div className="row">
       <div className="col-md-4">
           <div className="form-group biogroup">
-              <label for="email" style={{fontFamily:'Roboto'}}>Email</label>
+              <label for="email" style={{fontFamily:'Montserrat'}}>Email</label>
                 <textarea 
+                style={{fontFamily:'Montserrat'}}
                 className="bio form-control" 
                 rows="1"
                 value={props.email}
@@ -61,7 +62,8 @@ const Myprofile = props =>
   < br />
       <div className="col-md-4">
         <div className="input-group">
-          <input value={props.zipcode}
+          <input style={{fontFamily:'Montserrat'}}
+            value={props.zipcode}
             onChange={props.handleInputChange}
             name="zipcode"
             type="number"
@@ -109,7 +111,7 @@ const Myprofile = props =>
         <div className="row">
       <div className="col-md-8">
           <div className="form-group biogroup">
-              <label for="bio" style={{fontFamily:'Roboto'}}>About me</label>
+              <label for="bio" style={{fontFamily:'Montserrat'}}>About me</label>
                 <textarea 
                 className="bio form-control" 
                 rows="5"
@@ -130,10 +132,11 @@ const Myprofile = props =>
       </div>
   < br />
           <div className="col-md-4">
-        <div className="form-group biogroup">
-        <label for="image" style={{fontFamily:'Roboto'}}>Change Image</label>
+        <div className="form-group biogroup" id="uploadpic">
+        <label for="image" style={{fontFamily:'Montserrat'}}>Change Image</label>
            <input 
                className="bio form-control" 
+                style={{fontFamily:'Montserrat'}}
                 id="Attachment" 
                 text="Attachment" 
                 name="image"
@@ -144,8 +147,7 @@ const Myprofile = props =>
               <button
                 type="submit"
                 onClick={props.handleFormSubmit}
-                className="btn btn-default pull-left"
-                id="activitybtn"
+                className="btn btn-default pull-right"
                       >
                 Update
               </button>
