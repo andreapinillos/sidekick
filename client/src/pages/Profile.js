@@ -45,23 +45,29 @@ class Profile extends Component {
       image: this.state.image,
       zipcode: this.state.zipcode,
       activity: this.state.activity
+
     })
     .catch(err => console.log(err));
   };
 
   responseFacebook = (response) => {
-    console.log(response);
+    console.log(response)
     this.setState({
-      id: response.id,
       name: response.name,
       email: response.email,
-      // image:response.picture.data.url
+      image:response.picture.data.url
     });
   }    
 
 
   render() {
+
+    const loggedin = this.state.isloggedin;
+
     return (
+<div>
+    {(loggedin) ? (
+
       <Container>
           <Myprofile style={{ marginTop: 30 }}
             handleFormSubmit={this.handleFormSubmit}
@@ -70,7 +76,6 @@ class Profile extends Component {
             name= {this.state.name}
             email= {this.state.email}
             bio= {this.state.bio}
-            id= {this.state.id}
             image= {this.state.image}
             zipcode= {this.state.zipcode}
             activity= {this.state.activity}
@@ -112,7 +117,79 @@ class Profile extends Component {
             </div>
           </nav>
       </Container>
-  
+      ) : (
+      <Container>
+          <Myprofile style={{ marginTop: 30 }}
+            handleFormSubmit={this.handleFormSubmit}
+            handleInputChange={this.handleInputChange}
+            handleUpdate={this.handleUpdate}
+            name= {this.state.name}
+            email= {this.state.email}
+            bio= {this.state.bio}
+            image= {this.state.image}
+            zipcode= {this.state.zipcode}
+            activity= {this.state.activity}
+          />
+          <nav className="navbar navbar-default navbar-fixed-top">
+            <div className="container-fluid">
+              
+              <div className="navbar-header">
+                <Link className="navbar-brand" to="/">
+                  <img src={img} />
+                </Link>
+                <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span className="sr-only">Toggle navigation</span>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                </button>
+              </div>
+              <div id="navbar" className="navbar-collapse collapse">
+                  <ul className="nav navbar-nav navbar-right">
+                    <li>
+                      <button id="profilelink">
+                        <a href="/profile" className="aproflink">Profile</a>
+                      </button>
+                    </li>
+                    <li>
+               
+                    </li>
+                  </ul>
+              </div>
+            </div>
+          </nav>
+
+
+                 <FacebookLogin
+                      appId="1271186439693753"
+                      scope="public_profile,email"
+                      autoLoad={true}
+                      fields="name,email,picture"
+                      callback={this.responseFacebook}
+                      cssClass="my-facebook-button-class"
+                      icon="fa-facebook"
+                      />
+      </Container>
+
+
+
+
+      )}
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     );
   }
