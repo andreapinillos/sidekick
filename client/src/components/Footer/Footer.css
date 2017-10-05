@@ -6,12 +6,20 @@
 }
 
 .footer span {
-  font-size: 90%;
+  font-size: 80%;
   position: absolute;
   top: 40%;
   left: 0;
   right: 0;
   padding: 3px;
-  font-family: 'Roboto', sans-serif;
   color: white;
+  font-family: 'Montserrat', sans-serif
+}
+
+.footertag {
+  color: white;
+}
+
+.footertag:hover {
+  color: #E5E5e5;
 }
