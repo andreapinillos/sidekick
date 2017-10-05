@@ -18,7 +18,7 @@ var smtpTransport = nodemailer.createTransport({
 });
 
 var mailOptions = {
-	to: "omishark@gmail.com",
+	to: "",
 	from: "",
 	subject : "You have a connection on Sidekick!",
 	html : ""			
@@ -32,8 +32,8 @@ function sendSMTP(){
 			res.end("error");
 		}
 		else{
-			console.log("Message sent: " + response.message);
-			res.end("sent");
+			console.log("Message sent: " + JSON.stringify(response));
+			response.end("sent");
 		}
 	});
 }
@@ -50,7 +50,7 @@ router.route("/send")
 		var emailrecip = ""
 		
 		db.Sidekick_model.findById(req.body.idrecip, function(err, user){
-			mailOptions.from = user.email
+			mailOptions.to = user.email
 			mailOptions.html = ("Hello " + user.name + ". someone is trying to reach you about " + user.activity + " in " + user.zipcode + "! You can reach them at " + user.email + ".")
 		})
 		.then(sendSMTP);

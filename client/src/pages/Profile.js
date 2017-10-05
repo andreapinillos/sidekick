@@ -36,7 +36,7 @@ class Profile extends Component {
     event.preventDefault();
 
     // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
-    alert(`Your name is ${this.state.username} bio is ${this.state.bio} with current activity being ${this.state.activity} in this zip ${this.state.zipcode}`);
+    alert(`Your name is ${this.state.name} bio is ${this.state.bio} with current activity being ${this.state.activity} in this zip ${this.state.zipcode}`);
     API.saveSkick({
       name: this.state.name,
       id: this.state.id,
@@ -51,11 +51,10 @@ class Profile extends Component {
 
   responseFacebook = (response) => {
     console.log(response)
-    
     this.setState({
       name: response.name,
       email: response.email,
-      image: response.picture.data.url
+      image:response.picture.data.url
     });
   }    
 
