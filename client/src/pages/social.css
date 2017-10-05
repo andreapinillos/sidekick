@@ -4,9 +4,9 @@ button{
 	font-size: 16px;
 	background-color: white;
 	border: none;
-	color: #6986CA;
+	color: #FEB273;
 }
 
 button:hover {
-    color: #5A73AD;
+    color: #EBA56C;
 }
