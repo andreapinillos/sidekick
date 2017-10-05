@@ -21,8 +21,13 @@ var mailOptions = {
 	to: "",
 	from: "",
 	subject : "You have a connection on Sidekick!",
-	html : ""			
-}
+	html : "",
+	attachments :[{
+        filename: 'sidekick.jpg',
+        path: './client/build/static/media/sidekick.jpg',
+        cid: '00000001'
+    }]			
+};
 
 function sendSMTP(){
 	console.log(mailOptions);
@@ -50,7 +55,10 @@ router.route("/send")
 		
 		db.Sidekick_model.findById(req.body.idrecip, function(err, user){
 			mailOptions.to = user.email
-			mailOptions.html = ("Hello " + user.name + ". someone is trying to reach you about " + user.activity + " in " + user.zipcode + "! You can reach them at " + mailOptions.from + ".")
+			mailOptions.html = ("<h2>" + "Hello " + user.name + "</h2>" + "<h3>"
+			 + "someone is trying to reach you about " + user.activity + " in " + user.zipcode + 
+			 "! </h3><h3>" + " You can connact the person at: " + mailOptions.from + "." + "</h3>" +
+			 "<p>Please visit our Sidekick website: " + "https://sidekick1.herokuapp.com " + "for more activities and friends !")
 		})
 		.then(sendSMTP);
 
