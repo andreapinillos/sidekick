@@ -1,6 +1,8 @@
 const path = require("path");
 const router = require("express").Router();
 const apiRoutes = require("./api");
+const db = require("../models");
+
 var nodemailer = require("nodemailer")
 
 var smtpTransport = nodemailer.createTransport({
@@ -15,31 +17,44 @@ var smtpTransport = nodemailer.createTransport({
     debug:true
 });
 
+var mailOptions = {
+	to: "omishark@gmail.com",
+	from: "",
+	subject : "You have a connection on Sidekick!",
+	html : ""			
+}
+
+function sendSMTP(){
+	console.log(mailOptions);
+	smtpTransport.sendMail(mailOptions, function(error, response){
+		if(error){
+			console.log(error);
+			res.end("error");
+		}
+		else{
+			console.log("Message sent: " + response.message);
+			res.end("sent");
+		}
+	});
+}
+
 // API Routes
 router.use("/api", apiRoutes);
 
 
 //send email route
 router.route("/send")
-	.get(function(req, res) {
-		console.log("you are in get on the server email is " + req)
-		var mailOptions={
-			to : "almira1612@gmail.com",
-			from : "receiver@sender.com",
-			subject : "You have a connection on Sidekick!",
-			html : "<h3>Message: </h3>" + req.query.text + "<h2>User profile</h2><br><h2>user email:</h2><p>receiver@test.com</p>"
-		}
-		console.log(mailOptions);
-		smtpTransport.sendMail(mailOptions, function(error, response){
-			if(error){
-				console.log(error);
-				res.end("error");
-			}
-			else{
-				console.log("Message sent: " + response.message);
-				res.end("sent");
-			}
-		});
+	.post(function(req, res) {
+		console.log("req.body.id is " + req.body.idrecip + " sender email " + req.body.senderemail);		
+		mailOptions.from = req.body.senderemail;
+		var emailrecip = ""
+		
+		db.Sidekick_model.findById(req.body.idrecip, function(err, user){
+			mailOptions.from = user.email
+			mailOptions.html = ("Hello " + user.name + ". someone is trying to reach you about " + user.activity + " in " + user.zipcode + "! You can reach them at " + user.email + ".")
+		})
+		.then(sendSMTP);
+
 	});
 
 

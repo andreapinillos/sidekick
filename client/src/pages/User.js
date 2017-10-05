@@ -14,7 +14,9 @@ import img from './sidekick.svg';
 
 class User extends Component {
   state = {
-    sidekick: {}
+    sidekick: {},
+    isloggedin: false,
+    senderemail: ""
   };
   // When this component mounts, grab the book with the _id of this.props.match.params.id
   // e.g. localhost:3000/users/599dcb67f0f16317844583fc
@@ -25,19 +27,25 @@ class User extends Component {
   };
 
   sendemail = () =>{
-    console.log ("you are in sendemail");
-    console.log("this is " + this.state.sidekick.bio);
     var tosend = {
-      id: this.state.sidekick._id,
-      recipientemail: this.state.sidekick.email
+      idrecip: this.props.match.params.id,
+      senderemail: this.state.senderemail
     }
-    console.log("the var id is " + tosend.id)
+    console.log ("you are in sendemail and this will be sent: " + JSON.stringify(tosend));
     API.submitemail(tosend)
   }
 
-  responseFacebook(response) {
-    console.log(response)
+  responseFacebook = (response) =>{
+    console.log("fb email " + response.email)
+    this.setState({
+      senderemail: response.email
+    })  
 
+    if(response.name){
+      this.setState({
+        isloggedin: true,
+      })
+    }
   }
 
   render() {
