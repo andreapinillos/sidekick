@@ -16,13 +16,12 @@ import "./social.css";
 import FacebookLogin from 'react-facebook-login';
 
 
-//var sidekickPull = sidekicksjson;
+var sidekickPull = sidekicksjson;
 
 
 class Home extends Component {
   state = {
-    sidekickperm: [],
-    sidekickrender:[],
+    sidekicks: [],
     zipcode: "",
     activity: "",
     isloggedin: false
@@ -39,8 +38,8 @@ class Home extends Component {
 
   loadSkicks = () => {
     API.getSkicks()
-      .then(res => this.setState({ sidekickperm: res.data, sidekickrender: res.data }))
-      .then(console.log("in the log " + this.state.sidekicks))
+      .then(res => this.setState({ sidekicks: res.data }))
+      .then(console.log("in the log" +this.state.sidekicks))
       .catch(err => console.log(err));
   };    
 
@@ -60,19 +59,18 @@ class Home extends Component {
 
     // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
     alert(`You are looking in ${this.state.zipcode} for ${this.state.activity}, your current status is ${this.state.status}`);
-    var zippy = this.state.zipcode;
-    var acty = this.state.activity;
-    console.log("your filters are " + zippy  + " " + acty)
-    console.log("state practice " + this.state.sidekickperm[0].activity)
     this.setState({
+      zipcode: this.state.zipcode,
+      activity: this.state.activity,
+      status: this.state.status,//Pull set status from database--change status button will set this state.
       // long turnery if statement that decides which way to filter the sidekicks array based on user input
-      sidekickrender: this.state.sidekickperm.filter(sidekick => 
-        (zippy && (acty !="select")) ? (sidekick.zipcode == zippy && sidekick.activity == acty) 
-        : (zippy) ? (sidekick.zipcode == zippy) 
-        : (acty !="select") ? sidekick.activity == acty 
-        : sidekick == sidekick)
+      sidekicks: sidekickPull.filter(sidekick => 
+        (this.state.zipcode && (this.state.activity !=="select")) ? (sidekick.zipcode === this.state.zipcode && sidekick.activity === this.state.activity) 
+        : (this.state.zipcode) ? (sidekick.zipcode === this.state.zipcode) 
+        : (this.state.activity !=="select") ? sidekick.activity === this.state.activity 
+        : sidekick === sidekick)
     });
-    //console.log(sidekickPull.filter(sidekick => sidekick === sidekick));
+    console.log(sidekickPull.filter(sidekick => sidekick === sidekick));
   };  
 
    handleUpdate = event => {
@@ -95,16 +93,18 @@ class Home extends Component {
           handleInputChange={this.handleInputChange}
           handleUpdate={this.handleUpdate}
         />
+        <Social />
       <Row>
         <Col size="lg-12">
-            {this.state.sidekickrender.length ? (
+            {this.state.sidekicks.length ? (
             <List>
-            {this.state.sidekickrender.map(sidekick => (
+            {this.state.sidekicks.map(sidekick => (
               <People 
                   name = {sidekick.name} 
                   activity = {sidekick.activity}
                   bio = {sidekick.bio}
                   image={sidekick.image}
+                  key = {sidekick._id}
                   href = {"/users/" + sidekick._id}                  
               />
             ))}
@@ -132,6 +132,11 @@ class Home extends Component {
               <div id="navbar" className="navbar-collapse collapse">
                   <ul className="nav navbar-nav navbar-right">
                     <li>
+                      <button id="profilelink">
+                        <a href="/profile" className="aproflink">Profile</a>
+                      </button>
+                    </li>
+                    <li>
                       <FacebookLogin
                       appId="1271186439693753"
                       scope="public_profile,email"
@@ -141,11 +146,6 @@ class Home extends Component {
                       cssClass="my-facebook-button-class"
                       icon="fa-facebook"
                       />
-                    </li>
-                    <li>
-                      <button id="profilelink">
-                        <a href="/profile" className="aproflink">Profile</a>
-                      </button>
                     </li>
                   </ul>
               </div>
