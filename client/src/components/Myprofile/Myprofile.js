@@ -128,8 +128,30 @@ const Myprofile = props =>
               </button>
           </div>
       </div>
-    </div>
-
+  < br />
+          <div className="col-md-4">
+        <div className="form-group biogroup">
+        <label for="image" style={{fontFamily:'Roboto'}}>Change Image</label>
+           <input 
+               className="bio form-control" 
+                id="Attachment" 
+                text="Attachment" 
+                name="image"
+                value={props.image}
+                onChange={props.handleInputChange}
+                type="file"
+                placeholder={props.image} />
+              <button
+                type="submit"
+                onClick={props.handleFormSubmit}
+                className="btn btn-default pull-left"
+                id="activitybtn"
+                      >
+                Update
+              </button>
+         </div>
+      </div>
+</div>
   </form>
 </div>
 </div>

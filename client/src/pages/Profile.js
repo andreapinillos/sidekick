@@ -55,7 +55,7 @@ class Profile extends Component {
     this.setState({
       name: response.name,
       email: response.email,
-      image:response.picture.data.url
+      image: response.picture.data.url
     });
   }    
 
