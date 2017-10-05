@@ -36,6 +36,7 @@ const sidekickseed = [
     "name": "Squidward",
     "image": "https://vignette2.wikia.nocookie.net/fictionalcharacters/images/a/ac/Squidward.png/revision/latest?cb=20131121012626",
     "bio": "Cashier in An Easter Island Head",
+    "email" : "almira1612@gmail.com",
     "activity": "hiking",
     "zipcode": "20008"  },
   {
