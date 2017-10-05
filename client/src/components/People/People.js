@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./People.css";
 
-
 const People = props =>
 
 <div>
@@ -21,7 +20,7 @@ const People = props =>
                   <strong>Activity:</strong> {props.activity}
                 </li>
                 <li>
-                  <strong>Bio:</strong> {props.href}
+                  <strong>Bio:</strong> {props.bio}
                 </li>
               </ul>
             </div>

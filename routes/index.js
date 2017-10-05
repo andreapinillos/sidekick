@@ -47,10 +47,11 @@ router.route("/send")
 	.post(function(req, res) {
 		console.log("req.body.id is " + req.body.idrecip + " sender email " + req.body.senderemail);		
 		mailOptions.from = req.body.senderemail;
+		var emailrecip = ""
 		
 		db.Sidekick_model.findById(req.body.idrecip, function(err, user){
 			mailOptions.to = user.email
-			mailOptions.html = ("Hello " + user.name + ". someone is trying to reach you about " + user.activity + " in " + user.zipcode + "! You can reach them at " + mailOptions.from + ".")
+			mailOptions.html = ("Hello " + user.name + ". someone is trying to reach you about " + user.activity + " in " + user.zipcode + "! You can reach them at " + user.email + ".")
 		})
 		.then(sendSMTP);
 
