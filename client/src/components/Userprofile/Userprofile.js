@@ -35,7 +35,14 @@ const Userprofile = props =>
          	className="btn btn-default userbtn"
     	 	onClick={props.onclick}>send email</button>      
     </div> 
-
+    </Row>
+    <hr />
+    <Row>
+      <div className="">
+        <button className="btn gobackbtn">
+          <a href="/" className="gobacktag">Go Back</a>
+        </button>
+      </div>    
     </Row>
 </div>;
 

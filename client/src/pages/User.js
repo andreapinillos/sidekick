@@ -8,6 +8,9 @@ import API from "../utils/API";
 import ReactDOM from 'react-dom';
 import FacebookLogin from 'react-facebook-login';
 import "./social.css";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
+import img from './sidekick.svg';
 
 class User extends Component {
   state = {
@@ -53,16 +56,42 @@ class User extends Component {
 
           />
 
-      <FacebookLogin
-        appId="1271186439693753"
-        scope="public_profile,email"
-        autoLoad={true}
-        fields="name,email,picture"
-        callback={this.responseFacebook}
-        cssClass="my-facebook-button-class"
-        icon="fa-facebook"
-      />
-
+          <nav className="navbar navbar-default navbar-fixed-top">
+            <div className="container-fluid">
+              
+              <div className="navbar-header">
+                <Link className="navbar-brand" to="/">
+                  <img src={img} />
+                </Link>
+                <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span className="sr-only">Toggle navigation</span>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                </button>
+              </div>
+              <div id="navbar" className="navbar-collapse collapse">
+                  <ul className="nav navbar-nav navbar-right">
+                    <li>
+                      <button id="profilelink">
+                        <a href="/profile" className="aproflink">Profile</a>
+                      </button>
+                    </li>
+                    <li>
+                      <FacebookLogin
+                      appId="1271186439693753"
+                      scope="public_profile,email"
+                      autoLoad={true}
+                      fields="name,email,picture"
+                      callback={this.responseFacebook}
+                      cssClass="my-facebook-button-class"
+                      icon="fa-facebook"
+                      />
+                    </li>
+                  </ul>
+              </div>
+            </div>
+          </nav>
       </Container>
     );
   }

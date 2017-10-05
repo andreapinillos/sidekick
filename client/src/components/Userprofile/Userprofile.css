@@ -57,6 +57,24 @@
 	margin-top: 15px;
 	float: left;
 
+}
 
+.gobackbtn {
+	background-color: #6986CA;
+}
+
+.gobackbtn:hover {
+	background-color: #5A73AD;
+}
+
+
+.gobacktag {
+	color: #FFFFFF;
 
 }
+
+.gobacktag:hover {
+	color: #FFFFFF;
+
+}
+

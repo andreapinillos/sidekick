@@ -1,0 +1,54 @@
+nav.navbar.navbar-fixed-top {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  background-color: #fff;
+}
+a.navbar-brand.navbar-link {
+
+	/*height: 0%;*/ 
+}
+
+ul.nav.navbar-nav{
+  float:right;
+
+}
+
+
+.navbar-fixed-top .navbar-brand {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+img{
+	height: 125%;
+
+}
+
+#profilelink {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  background-color: white;
+  border: none;
+}
+
+
+.aproflink {
+  color:#FEB273;
+}
+
+.aproflink:hover {
+  color: #EBA56C;
+}
+
+@media screen and (max-width: 640px) {
+  
+  img {
+    height:100%;
+  }
+
+}
+
+
+
