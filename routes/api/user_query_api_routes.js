@@ -10,10 +10,12 @@ router.route("/")
 router
   .route("/:id")
   .get(sidekickController.findById)
-  .put(sidekickController.update)
+  .post(sidekickController.update)
   .delete(sidekickController.remove);
 
+router
+.route("/me/:fbid")
+.get(sidekickController.findByFBid)
+.put(sidekickController.update);
+
 module.exports = router;
-
-
-

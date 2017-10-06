@@ -15,10 +15,6 @@ import img from './sidekick.svg';
 import "./social.css";
 import FacebookLogin from 'react-facebook-login';
 
-
-//var sidekickPull = sidekicksjson;
-
-
 class Home extends Component {
   state = {
     sidekickperm: [],
