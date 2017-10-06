@@ -49,32 +49,20 @@ const Myprofile = props =>
                 type="text"
                 placeholder={props.email}/>
 
-              <button
-                type="submit"
-                onClick={props.handleFormSubmit}
-                className="btn btn-default pull-right"
-                      >
-                Update
-              </button>
           </div>
       </div>
   < br />
+
       <div className="col-md-4">
-        <div className="input-group">
-          <input value={props.zipcode}
+        <div className="form-group zipinput">
+        <label style={{fontFamily:'Montserrat'}}>Zipcode</label>
+          <textarea value={props.zipcode}
+            rows="1"
             onChange={props.handleInputChange}
             name="zipcode"
             type="number"
             className="form-control"
-            placeholder="Zipcode" />
-          <span className="input-group-btn">
-            <button 
-              type="submit"
-              onClick={props.handleFormSubmit}
-              className="btn btn-default">
-                Update
-            </button>
-          </span>
+           />
         </div>
       </div>
       <div className="col-md-4">
@@ -94,14 +82,6 @@ const Myprofile = props =>
                 <option value="rock climbing">Rock Climbing</option>
             </select>
           </span>
-              <button
-                type="submit"
-                onClick={props.handleFormSubmit}
-                className="btn btn-default pull-left"
-                id="activitybtn"
-                      >
-                Update
-              </button>
          </div>
       </div>
     </div>
@@ -119,38 +99,19 @@ const Myprofile = props =>
                 type="text"
                 placeholder={props.bio}/>
 
-              <button
-                type="submit"
-                onClick={props.handleFormSubmit}
-                className="btn btn-default pull-right"
-                      >
-                Update
-              </button>
           </div>
       </div>
   < br />
-          <div className="col-md-4">
+          <div className="col-md-4" style={{marginTop: "5rem"}}>
         <div className="form-group biogroup" id="uploadpic">
-        {/* 
-        <label for="image" style={{fontFamily:'Montserrat'}}>Change Image</label>
-           <input 
-               className="bio form-control" 
-                style={{fontFamily:'Montserrat'}}
-                id="Attachment" 
-                text="Attachment" 
-                name="image"
-                value=""
-                onChange={props.handleInputChange}
-                type="file"
-                placeholder={props.image} />
               <button
                 type="submit"
                 onClick={props.handleFormSubmit}
-                className="btn btn-default pull-right"
+                className="btn btn-default myprofilebtn"
                       >
                 Update
               </button>
-              */} 
+              
          </div>
       </div>
 </div>

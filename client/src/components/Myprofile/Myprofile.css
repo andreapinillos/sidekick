@@ -51,4 +51,17 @@
     width: 100%;
 }
 
+.zipinput {
+    margin-top: 2.34rem;
+    text-align: left;
+}
+
+.myprofilebtn {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    margin-top: 10%
+}
+
+
 
