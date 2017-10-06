@@ -12,8 +12,8 @@ const Myprofile = props =>
   
 <div className="row">
   <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
- <a className="thumbnail fancybox" rel="ligthbox" href={"https://graph.facebook.com/" + props.id + "/picture?width=300&height=300"}>
-        <img className="img-responsive" alt="nothing to display" src={"https://graph.facebook.com/" + props.id + "/picture?width=300&height=300"} />
+ <a className="thumbnail fancybox" rel="ligthbox" href={"https://graph.facebook.com/" + props.imguseID + "/picture?width=300&height=300"}>
+        <img className="img-responsive" alt="nothing to display" src={"https://graph.facebook.com/" + props.imguseID + "/picture?width=300&height=300"} />
     </a>
   </div>
   <div className="col-xs-9 col-sm-9 col-md-9 col-lg-9">

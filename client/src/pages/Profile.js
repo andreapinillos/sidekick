@@ -78,6 +78,7 @@ class Profile extends Component {
     }
     else{
       var tempuser = {
+        id: this.state.id,
         name: this.state.tempname,
         email: this.state.tempemail,
         bio: "Profile is incomplete! Please add a bio, zipcode and activity you are interested in so you can make connections!",
@@ -108,6 +109,7 @@ class Profile extends Component {
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
             handleUpdate={this.handleUpdate}
+            id= {this.state.me.id}
             name= {this.state.me.name}
             email= {this.state.me.email}
             bio= {this.state.me.bio}
@@ -160,6 +162,7 @@ class Profile extends Component {
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
             handleUpdate={this.handleUpdate}
+            id= {this.state.id}
             name= {this.state.name}
             email= {this.state.email}
             bio= {this.state.bio}
