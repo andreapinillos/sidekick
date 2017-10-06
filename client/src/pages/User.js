@@ -112,7 +112,7 @@ const loggedin = this.state.isloggedin;
    
 <Container>
           <nav className="navbar navbar-default navbar-fixed-top">
-               {alert('log in')}
+
             <div className="container-fluid">
               
               <div className="navbar-header">
@@ -133,12 +133,8 @@ const loggedin = this.state.isloggedin;
                         <a href="/profile" className="aproflink">Profile</a>
                       </button>
                     </li>
-             
-                  </ul>
-              </div>
-            </div>
-          </nav>
-                    <FacebookLogin
+                    <li>
+                      <FacebookLogin
                       appId="1271186439693753"
                       scope="public_profile,email"
                       autoLoad={true}
@@ -147,6 +143,13 @@ const loggedin = this.state.isloggedin;
                       cssClass="my-facebook-button-class"
                       icon="fa-facebook"
                   />
+                    </li>
+             
+                  </ul>
+              </div>
+            </div>
+          </nav>
+
           </Container>
 
      
