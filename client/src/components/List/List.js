@@ -3,8 +3,8 @@ import "./List.css";
 
 const List = ({ children }) => {
   return (
-    <div>
-      <ul>
+    <div className="list-overflow-container">
+      <ul className="list-group">
         {children}
       </ul>
     </div>
