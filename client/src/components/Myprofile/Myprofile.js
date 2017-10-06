@@ -39,11 +39,7 @@ const Myprofile = props =>
     <div className="row">
       <div className="col-md-4">
           <div className="form-group biogroup">
-<<<<<<< HEAD
               <label htmlFor="email" style={{fontFamily:'Montserrat'}}>Email</label>
-=======
-              <label for="email" style={{fontFamily:'Roboto'}}>Email</label>
->>>>>>> cafa16119c4d45815dff35e83898ccdebd31ac1e
                 <textarea 
                 className="bio form-control" 
                 rows="1"
@@ -113,11 +109,7 @@ const Myprofile = props =>
         <div className="row">
       <div className="col-md-8">
           <div className="form-group biogroup">
-<<<<<<< HEAD
               <label htmlFor="bio" style={{fontFamily:'Montserrat'}}>About me</label>
-=======
-              <label for="bio" style={{fontFamily:'Roboto'}}>About me</label>
->>>>>>> cafa16119c4d45815dff35e83898ccdebd31ac1e
                 <textarea 
                 className="bio form-control" 
                 rows="5"
