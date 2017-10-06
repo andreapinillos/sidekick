@@ -21,7 +21,7 @@ const People = props =>
                   <strong>Activity:</strong> {props.activity}
                 </li>
                 <li>
-                  <strong>Bio:</strong> {props.bio}
+                  <strong>About:</strong> {props.bio}
                 </li>
               </ul>
             </div>
