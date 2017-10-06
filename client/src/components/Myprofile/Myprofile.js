@@ -41,6 +41,7 @@ const Myprofile = props =>
           <div className="form-group biogroup">
               <label htmlFor="email" style={{fontFamily:'Montserrat'}}>Email</label>
                 <textarea 
+                style={{fontFamily:'Montserrat'}}
                 className="bio form-control" 
                 rows="1"
                 value={props.email}
@@ -57,6 +58,7 @@ const Myprofile = props =>
         <div className="form-group zipinput">
         <label style={{fontFamily:'Montserrat'}}>Zipcode</label>
           <textarea value={props.zipcode}
+            style={{fontFamily:'Montserrat'}}
             rows="1"
             onChange={props.handleInputChange}
             name="zipcode"
@@ -91,6 +93,7 @@ const Myprofile = props =>
           <div className="form-group biogroup">
               <label htmlFor="bio" style={{fontFamily:'Montserrat'}}>About me</label>
                 <textarea 
+                style={{fontFamily:'Montserrat'}}
                 className="bio form-control" 
                 rows="5"
                 value={props.bio}
