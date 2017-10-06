@@ -15,14 +15,15 @@
 }
 
 .card-block {
+	font-size: 90%;
 	background-color: #6986CA;
 	color: white;
 	border-right: 1px solid #eeeeee;
 	border-left: 1px solid #eeeeee;
 	border-bottom: 1px solid #eeeeee;
-	line-height: 30px;
-	padding: 5%;
-	margin-bottom: 35%;
+	line-height: 20px;
+	padding: 2%;
+	margin-bottom: 1000px;
 	width: 100%;
 	border-radius: 5px;
 }
