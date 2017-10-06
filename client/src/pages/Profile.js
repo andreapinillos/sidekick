@@ -48,6 +48,7 @@ class Profile extends Component {
     event.preventDefault();
 
     // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
+<<<<<<< HEAD
     alert(`Your name is ${this.state.me.name} bio is ${this.state.me.bio} with current activity being ${this.state.me.activity} in this zip ${this.state.me.zipcode}`);
     var tosend ={
       route: this.state.me._id,
@@ -56,10 +57,24 @@ class Profile extends Component {
 
     API.updateSkick(tosend)
     .then(console.log("you sent"))
+=======
+    alert(`Your name is ${this.state.name} bio is ${this.state.bio} with current activity being ${this.state.activity} in this zip ${this.state.zipcode}`);
+    API.saveSkick({
+      name: this.state.name,
+      id: this.state._id,
+      email: this.state.email,
+      bio: this.state.bio,
+      image: this.state.image,
+      zipcode: this.state.zipcode,
+      activity: this.state.activity
+
+    })
+>>>>>>> cafa16119c4d45815dff35e83898ccdebd31ac1e
     .catch(err => console.log(err));
   };
 
   responseFacebook = (response) => {
+<<<<<<< HEAD
     var theFBid = response.id
 
     // look up this user based on fb id  
@@ -92,16 +107,32 @@ class Profile extends Component {
       this.setState({me:tempuser})
     }
 
+=======
+    console.log(response)
+    this.setState({
+      id: response.id,
+      name: response.name,
+      email: response.email,
+      // image:response.picture.data.url
+    });
+>>>>>>> cafa16119c4d45815dff35e83898ccdebd31ac1e
   }    
 
 
   render() {
+
+    const loggedin = this.state.isloggedin;
+
     return (
+<div>
+    {(loggedin) ? (
+
       <Container>
           <Myprofile style={{ marginTop: 30 }}
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
             handleUpdate={this.handleUpdate}
+<<<<<<< HEAD
             name= {this.state.me.name}
             email= {this.state.me.email}
             bio= {this.state.me.bio}
@@ -109,6 +140,15 @@ class Profile extends Component {
             zipcode= {this.state.me.zipcode}
             activity= {this.state.me.activity}
             imguseID={this.state.imguseID}
+=======
+            name= {this.state.name}
+            email= {this.state.email}
+            bio= {this.state.bio}
+            id= {this.state.id}
+            image= {this.state.image}
+            zipcode= {this.state.zipcode}
+            activity= {this.state.activity}
+>>>>>>> cafa16119c4d45815dff35e83898ccdebd31ac1e
           />
           <nav className="navbar navbar-default navbar-fixed-top">
             <div className="container-fluid">
@@ -128,6 +168,11 @@ class Profile extends Component {
                   <ul className="nav navbar-nav navbar-right">
                     {/* */}
                     <li>
+                      <button id="profilelink">
+                        <a href="/profile" className="aproflink">Profile</a>
+                      </button>
+                    </li>
+                    <li>
                       <FacebookLogin
                       appId="1271186439693753"
                       scope="public_profile,email"
@@ -138,18 +183,89 @@ class Profile extends Component {
                       icon="fa-facebook"
                       />
                     </li>
+<<<<<<< HEAD
                      {/* */}
-                    <li>
-                      <button id="profilelink">
-                        <a href="/profile" className="aproflink">Profile</a>
-                      </button>
-                    </li>
+=======
                   </ul>
               </div>
             </div>
           </nav>
       </Container>
-  
+      ) : (
+      <Container>
+          <Myprofile style={{ marginTop: 30 }}
+            handleFormSubmit={this.handleFormSubmit}
+            handleInputChange={this.handleInputChange}
+            handleUpdate={this.handleUpdate}
+            name= {this.state.name}
+            email= {this.state.email}
+            bio= {this.state.bio}
+            image= {this.state.image}
+            zipcode= {this.state.zipcode}
+            activity= {this.state.activity}
+          />
+          <nav className="navbar navbar-default navbar-fixed-top">
+            <div className="container-fluid">
+              
+              <div className="navbar-header">
+                <Link className="navbar-brand" to="/">
+                  <img src={img} />
+                </Link>
+                <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span className="sr-only">Toggle navigation</span>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                </button>
+              </div>
+              <div id="navbar" className="navbar-collapse collapse">
+                  <ul className="nav navbar-nav navbar-right">
+>>>>>>> cafa16119c4d45815dff35e83898ccdebd31ac1e
+                    <li>
+                      <button id="profilelink">
+                        <a href="/profile" className="aproflink">Profile</a>
+                      </button>
+                    </li>
+                    <li>
+            
+               
+                    </li>
+                  </ul>
+              </div>
+            </div>
+          </nav>
+
+
+                 <FacebookLogin
+                      appId="1271186439693753"
+                      scope="public_profile,email"
+                      autoLoad={true}
+                      fields="name,email,picture"
+                      callback={this.responseFacebook}
+                      cssClass="my-facebook-button-class"
+                      icon="fa-facebook"
+                      />
+      </Container>
+
+
+
+
+      )}
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     );
   }

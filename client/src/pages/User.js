@@ -11,11 +11,13 @@ import "./social.css";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import img from './sidekick.svg';
+//import Login from "../components/Login";
+
 
 class User extends Component {
   state = {
     sidekick: {},
-    isloggedin: false,
+    isloggedin: "",
     senderemail: ""
   };
   // When this component mounts, grab the book with the _id of this.props.match.params.id
@@ -24,15 +26,19 @@ class User extends Component {
     API.getSkick(this.props.match.params.id)
       .then(res => this.setState({ sidekick: res.data }))
       .catch(err => console.log(err));
+
+      //(this.props.isLoggedin) ? alert('logged in') : alert('please login')
+      console.log(this.props.isLoggedin);
   };
 
   sendemail = () =>{
     var tosend = {
-      idrecip: this.state.sidekick._id,
+      idrecip: this.props.match.params.id,
       senderemail: this.state.senderemail
     }
     console.log ("you are in sendemail and this will be sent: " + JSON.stringify(tosend));
     API.submitemail(tosend)
+    alert("The email have been sent to " + this.state.sidekick.name);
   }
 
   responseFacebook = (response) =>{
@@ -48,11 +54,17 @@ class User extends Component {
     }
   }
 
+
   render() {
 
-     return ( 
+const loggedin = this.state.isloggedin;
+     
+      return ( 
 
-      <Container>        
+<div>
+    {(loggedin) ? (
+
+       <Container>        
         <Userprofile
 
           name = {this.state.sidekick.name} 
@@ -61,6 +73,8 @@ class User extends Component {
           zipcode = {this.state.sidekick.zipcode}
           image={this.state.sidekick.image} 
           onclick = {this.sendemail}
+          isloggedin = {this.state.isloggedin}
+
 
           />
 
@@ -81,7 +95,50 @@ class User extends Component {
               <div id="navbar" className="navbar-collapse collapse">
                   <ul className="nav navbar-nav navbar-right">
                     <li>
-                      <FacebookLogin
+                      <button id="profilelink">
+                        <a href="/profile" className="aproflink">Profile</a>
+                      </button>
+                    </li>
+                    <li>
+               
+                    </li>
+                  </ul>
+              </div>
+            </div>
+          </nav>
+      </Container>
+      ) : (
+
+   
+<Container>
+          <nav className="navbar navbar-default navbar-fixed-top">
+               {alert('log in')}
+            <div className="container-fluid">
+              
+              <div className="navbar-header">
+                <Link className="navbar-brand" to="/">
+                  <img src={img} />
+                </Link>
+                <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span className="sr-only">Toggle navigation</span>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                </button>
+              </div>
+              <div id="navbar" className="navbar-collapse collapse">
+                  <ul className="nav navbar-nav navbar-right">
+                    <li>
+                      <button id="profilelink">
+                        <a href="/profile" className="aproflink">Profile</a>
+                      </button>
+                    </li>
+             
+                  </ul>
+              </div>
+            </div>
+          </nav>
+                    <FacebookLogin
                       appId="1271186439693753"
                       scope="public_profile,email"
                       autoLoad={true}
@@ -89,18 +146,15 @@ class User extends Component {
                       callback={this.responseFacebook}
                       cssClass="my-facebook-button-class"
                       icon="fa-facebook"
-                      />
-                    </li>
-                    <li>
-                      <button id="profilelink">
-                        <a href="/profile" className="aproflink">Profile</a>
-                      </button>
-                    </li>
-                  </ul>
-              </div>
-            </div>
-          </nav>
-      </Container>
+                  />
+          </Container>
+
+     
+
+      )}
+    </div>
+
+    
     );
   }
 }

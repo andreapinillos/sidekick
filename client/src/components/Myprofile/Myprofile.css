@@ -6,7 +6,7 @@
     padding-top: 5%;
     padding-bottom: 5%;
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -15,7 +15,7 @@
     border: 1px solid #eeeeee;
     color: #848484;
     font-size: 1em;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     height: 3.95rem;
     width: 20rem;
     margin-right: 3.0rem;
@@ -51,7 +51,4 @@
     width: 100%;
 }
 
-#uploadpic {
-    margin-top: 2.3rem;
-}
 

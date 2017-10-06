@@ -18,7 +18,7 @@ import FacebookLogin from 'react-facebook-login';
 class Home extends Component {
   state = {
     sidekickperm: [],
-    sidekickrender:[],
+    sidekickrender: [],
     zipcode: "",
     activity: "",
     isloggedin: false
@@ -56,19 +56,19 @@ class Home extends Component {
 
     // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
     alert(`You are looking in ${this.state.zipcode} for ${this.state.activity}, your current status is ${this.state.status}`);
-    var zippy = this.state.zipcode;
-    var acty = this.state.activity;
-    console.log("your filters are " + zippy  + " " + acty)
-    console.log("state practice " + this.state.sidekickperm[0].activity)
+        var zippy = this.state.zipcode;
+        var acty = this.state.activity;
+        console.log("your filters are " + zippy  + " " + acty)
+        console.log("state practice " + this.state.sidekickperm[0].activity)
     this.setState({
       // long turnery if statement that decides which way to filter the sidekicks array based on user input
-      sidekickrender: this.state.sidekickperm.filter(sidekick => 
+          sidekickrender: this.state.sidekickperm.filter(sidekick => 
         (zippy && (acty !="select")) ? (sidekick.zipcode == zippy && sidekick.activity == acty) 
-        : (zippy) ? (sidekick.zipcode == zippy) 
-        : (acty !="select") ? sidekick.activity == acty 
-        : sidekick == sidekick)
+         : (zippy) ? (sidekick.zipcode == zippy) 
+         : (acty !="select") ? sidekick.activity == acty 
+         : sidekick == sidekick)
     });
-    //console.log(sidekickPull.filter(sidekick => sidekick === sidekick));
+     //console.log(sidekickPull.filter(sidekick => sidekick === sidekick));
   };  
 
    handleUpdate = event => {
@@ -128,6 +128,11 @@ class Home extends Component {
               <div id="navbar" className="navbar-collapse collapse">
                   <ul className="nav navbar-nav navbar-right">
                     <li>
+                      <button id="profilelink">
+                        <a href="/profile" className="aproflink">Profile</a>
+                      </button>
+                    </li>
+                    <li>
                       <FacebookLogin
                       appId="1271186439693753"
                       scope="public_profile,email"
@@ -137,11 +142,6 @@ class Home extends Component {
                       cssClass="my-facebook-button-class"
                       icon="fa-facebook"
                       />
-                    </li>
-                    <li>
-                      <button id="profilelink">
-                        <a href="/profile" className="aproflink">Profile</a>
-                      </button>
                     </li>
                   </ul>
               </div>
