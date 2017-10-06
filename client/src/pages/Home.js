@@ -140,7 +140,7 @@ class Home extends Component {
                       fields="name,email,picture"
                       callback={this.responseFacebook}
                       cssClass="my-facebook-button-class"
-                      icon="fa-facebook"
+                      icon=""
                       />
                     </li>
                   </ul>
