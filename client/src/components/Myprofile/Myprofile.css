@@ -1,5 +1,6 @@
 .btn {
 	margin-left: 0rem;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #changeinfo {
@@ -15,9 +16,9 @@
     border: 1px solid #eeeeee;
     color: #848484;
     font-size: 1em;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     height: 3.95rem;
-    width: 20rem;
+    width: 34rem;
     margin-right: 3.0rem;
 	margin-right: 0rem;
 	margin-top: 5rem;
