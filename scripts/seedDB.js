@@ -20,7 +20,7 @@ const sidekickseed = [
     "name": "SpongeBob",
     "image": "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/Spongebob-squarepants.svg/666px-Spongebob-squarepants.svg.png",
     "bio": "Fry Cook in A Pineapple Under the Sea",
-    "email" : "spongebob@gmail.com",
+    "email" : "almira1612@gmail.com",
     "activity": "hiking",
     "zipcode": "20008",
     "fbid": "9999"
@@ -40,11 +40,10 @@ const sidekickseed = [
     "name": "Squidward",
     "image": "https://vignette2.wikia.nocookie.net/fictionalcharacters/images/a/ac/Squidward.png/revision/latest?cb=20131121012626",
     "bio": "Cashier in An Easter Island Head",
-    "email" : "almira1612@gmail.com",
     "activity": "hiking",
     "zipcode": "20008",
     "fbid": "7777",
-    "email" : "squid@gmail.com"    
+    "email" : "almira1612@gmail.com"    
   },
   {
     "name": "Dexter",

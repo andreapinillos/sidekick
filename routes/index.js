@@ -3,6 +3,7 @@ const router = require("express").Router();
 const apiRoutes = require("./api");
 const db = require("../models");
 
+
 var nodemailer = require("nodemailer")
 
 var smtpTransport = nodemailer.createTransport({
@@ -22,11 +23,12 @@ var mailOptions = {
 	from: "",
 	subject : "You have a connection on Sidekick!",
 	html : "",
-	// attachments :[{
- //        filename: 'sidekick.jpg',
- //        path: '../client/build/static/media/sidekick.0daa81ee.svg',
- //        cid: '00000001'
- //    }]			
+	attachments :
+    {
+    	filename: 'sidekick.jpg',
+        path: './client/build/sidekick.jpg',
+        cid: '00000001'
+    }			
 };
 
 function sendSMTP(){
@@ -55,10 +57,11 @@ router.route("/send")
 		
 		db.Sidekick_model.findById(req.body.idrecip, function(err, user){
 			mailOptions.to = user.email
-			mailOptions.html = ("<h2>" + "Hello " + user.name + "</h2>" + "<h3>"
+			mailOptions.html = ('<p><img src="cid:00000001"/></p>'+"<h2>" + "Hello " + user.name + "</h2>" + "<h3>"
 			 + "A Sidekick user is interested in doing " + user.activity + " in " + user.zipcode + 
 			 " with you! </h3><h3>" + " Contact your new connection at: " + mailOptions.from + "." + "</h3>" +
-			 "<p>Please visit our Sidekick website: " + "https://sidekick1.herokuapp.com " + "for more activities and friends !")
+			 "<br><br><p>Please visit our Sidekick website: " + "https://sidekick1.herokuapp.com " + 
+			 "for more activities and friends !" + "<br><p>From Sidekick Team</p>")
 		})
 		.then(sendSMTP);
 
