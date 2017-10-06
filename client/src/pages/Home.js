@@ -36,7 +36,7 @@ class Home extends Component {
   loadSkicks = () => {
     API.getSkicks()
       .then(res => this.setState({ sidekickperm: res.data, sidekickrender: res.data }))
-      .then(console.log("in the log " + this.state.sidekicks))
+      .then(console.log("in the log " + this.state.sidekickperm))
       .catch(err => console.log(err));
   };    
 

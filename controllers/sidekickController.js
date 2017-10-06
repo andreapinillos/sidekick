@@ -31,7 +31,6 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-    console.log("the type is" + typeof req.body + "and name is " + req.body.name)    
     db.Sidekick_model
       .create(req.body)
       .then(console.log("the body " + JSON.stringify(req.body)))
@@ -39,11 +38,18 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
+    console.log("the type is" + typeof req.body + "and fbid is " + req.body.fbid)    
     db.Sidekick_model
-      .update({ fbid: req.params.fbid }, req.body)
-      .then(console.log(JSON.stringify(req.body)))
+      .findOneAndUpdate( { "fbid": req.body.fbid } , { "$set": { 
+        "name" : req.body.name, 
+        "email" : req.body.email, 
+        "image" : req.body.image, 
+        "bio" : req.body.bio, 
+        "activity" : req.body.activity, 
+        "zipcode" : req.body.zipcode}
+      })
       .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .catch(err => console.log(err));
   },
   remove: function(req, res) {
     db.Sidekick_model
