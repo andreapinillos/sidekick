@@ -21,7 +21,7 @@ const sidekickseed = [
     "image": "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/Spongebob-squarepants.svg/666px-Spongebob-squarepants.svg.png",
     "bio": "Fry Cook in A Pineapple Under the Sea",
     "email" : "almira1612@gmail.com",
-    "activity": "hiking",
+    "activity": "coding",
     "zipcode": "20008",
     "fbid": "9999"
 
@@ -49,7 +49,7 @@ const sidekickseed = [
     "name": "Dexter",
     "image": "https://s-media-cache-ak0.pinimg.com/originals/fe/32/49/fe32495d45283cd6860ae122f0aeaad9.png",
     "bio": "Boy Genius in A Secret Laboratory",
-    "activity": "hiking",
+    "activity": "coding",
     "zipcode": "20008",
     "fbid": "6666",
     "email" : "dex@gmail.com"    
@@ -58,7 +58,7 @@ const sidekickseed = [
     "name": "Courage",
     "image": "https://vignette4.wikia.nocookie.net/vsbattles/images/3/39/Courage-0.png/revision/latest?cb=20160719055423",
     "bio": "A Cowardly Dog in Nowhere, Kansas",
-    "activity": "running",
+    "activity": "trivia",
     "zipcode": "20008",
     "fbid": "5555",
     "email" : "courage@gmail.com"    
@@ -85,7 +85,7 @@ const sidekickseed = [
     "name": "Johnny Bravo",
     "image": "http://vignette3.wikia.nocookie.net/p__/images/9/9a/Johnny_Bravo.png/revision/latest?cb=20131031233339&path-prefix=protagonist",
     "bio": "Ladies Man in Aron City",
-    "activity": "hiking",
+    "activity": "kayaking",
     "zipcode": "20008",
     "fbid": "2222",
     "email" : "johnny@gmail.com"    

@@ -18,7 +18,8 @@ class User extends Component {
   state = {
     sidekick: {},
     isloggedin: "",
-    senderemail: ""
+    senderemail: "",
+    senderFBid: ""
   };
   // When this component mounts, grab the user with the _id of this.props.match.params.id
   // e.g. localhost:3000/users/599dcb67f0f16317844583fc
@@ -42,13 +43,17 @@ class User extends Component {
   }
 
   responseFacebook = (response) =>{
-    console.log("fb email " + response.email)
+    console.log("fb id response " + response.id)
+    var passid = response.id;
     if(response.name){
       this.setState({
         isloggedin: true,
-        senderemail: response.email
+        senderFBid: response.id
       })  
     }
+    API.getmyprof(passid)
+    .then(res => this.setState({senderemail: res.data.email}))
+    .catch(err => console.log(err));    
   }
 
 
