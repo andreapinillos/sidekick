@@ -38,7 +38,7 @@ class User extends Component {
     }
     console.log ("you are in sendemail and this will be sent: " + JSON.stringify(tosend));
     API.submitemail(tosend)
-    alert("The email have been sent to " + this.state.sidekick.name);
+    alert("An email was sent to " + this.state.sidekick.name);
   }
 
   responseFacebook = (response) =>{
