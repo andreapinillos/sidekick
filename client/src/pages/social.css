@@ -1,6 +1,6 @@
 button{
 	margin-top: 15px;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 16px;
 	background-color: white;
 	border: none;
@@ -9,4 +9,13 @@ button{
 
 button:hover {
     color: #EBA56C;
+}
+
+#my-facebook-button-class{
+	margin-top: 15px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	background-color: white;
+	border: none;
+	color: #FEB273;	
 }

@@ -20,13 +20,8 @@ class Home extends Component {
     sidekickperm: [],
     sidekickrender: [],
     zipcode: "",
-    activity: "",
+    activity: "select",
     isloggedin: false
-    // userID,
-    // username,
-    // userpic,
-
-    //status: ""//Pull and set status from database--change status button will set this state.
     };
 
   componentDidMount() {
@@ -80,17 +75,30 @@ class Home extends Component {
     this.setState({
       status: this.state.status//Pull set status from database--change status button will set this state.
     });
-  };   
+  }; 
+  
+  responseFacebook = (response) => {
+    // look up this user based on fb id 
+    if(response.status === "unknown"){
+      console.log("you're in if")
+    }
+    else{
+      this.setState({isloggedin:true})
+    }     
+  }    
    
   render() {
+    const loggedin = this.state.isloggedin;
     return (
       <Container style={{ minHeight: "80%" }}>
         <h1 className="text-center" style={{ marginTop: 30 }}></h1>
+{(loggedin) ? (
         <Form style={{ marginTop: 30 }}
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
           handleUpdate={this.handleUpdate}
-        />
+        />):(<div></div>)}
+
       <Row>
         <Col size="lg-12">
             {this.state.sidekickrender.length ? (
@@ -131,6 +139,9 @@ class Home extends Component {
                       <button id="profilelink">
                         <a href="/profile" className="aproflink">Profile</a>
                       </button>
+                    </li>
+                    <li>
+                    <button>|</button>
                     </li>
                     <li>
                       <FacebookLogin

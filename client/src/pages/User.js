@@ -20,7 +20,7 @@ class User extends Component {
     isloggedin: "",
     senderemail: ""
   };
-  // When this component mounts, grab the book with the _id of this.props.match.params.id
+  // When this component mounts, grab the user with the _id of this.props.match.params.id
   // e.g. localhost:3000/users/599dcb67f0f16317844583fc
   componentDidMount() {
     API.getSkick(this.props.match.params.id)
@@ -43,21 +43,18 @@ class User extends Component {
 
   responseFacebook = (response) =>{
     console.log("fb email " + response.email)
-    this.setState({
-      senderemail: response.email
-    })  
-
     if(response.name){
       this.setState({
         isloggedin: true,
-      })
+        senderemail: response.email
+      })  
     }
   }
 
 
   render() {
 
-const loggedin = this.state.isloggedin;
+    const loggedin = this.state.isloggedin;
      
       return ( 
 
@@ -100,7 +97,9 @@ const loggedin = this.state.isloggedin;
                       </button>
                     </li>
                     <li>
-               
+                    <li>
+                    <button>|</button>
+                    </li>               
                     </li>
                   </ul>
               </div>
@@ -141,7 +140,7 @@ const loggedin = this.state.isloggedin;
                       fields="name,email,picture"
                       callback={this.responseFacebook}
                       cssClass="my-facebook-button-class"
-                      icon="fa-facebook"
+                      icon=""
                   />
                     </li>
              
@@ -149,6 +148,9 @@ const loggedin = this.state.isloggedin;
               </div>
             </div>
           </nav>
+          <br />
+          <br />
+          <h2>Please login to view user profiles.</h2>
 
           </Container>
 

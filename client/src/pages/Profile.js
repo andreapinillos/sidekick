@@ -23,7 +23,7 @@ class Profile extends Component {
     tempname: "tempname",
     tempemail: "tempemail",
     imguseID: "img.jpg",
-    isloggedin: true
+    isloggedin: false
   };
 
   handleInputChange = event => {
@@ -60,15 +60,20 @@ class Profile extends Component {
   };
 
   responseFacebook = (response) => {
-    var theFBid = response.id
+    if(response.status === "unknown"){
+      console.log("you're in if")
+    }
+    else{
+      var theFBid = response.id
+      this.setState({isloggedin:true})
+      // look up this user based on fb id  
+      API.getmyprof(theFBid)
+      .then(res => this.dealwithFB(res))
+      .catch(err => console.log(err));
 
-    // look up this user based on fb id  
-    API.getmyprof(theFBid)
-    .then(res => this.dealwithFB(res))
-    .catch(err => console.log(err));
-
-    //set temp variables incase of first login and to render image
-    this.setState({ tempname: response.name, tempemail: response.email, imguseID: response.id})      
+      //set temp variables incase of first login and to render image
+      this.setState({ tempname: response.name, tempemail: response.email, imguseID: response.id})      
+    }
   }
 
   dealwithFB = (res) =>{
@@ -134,11 +139,13 @@ class Profile extends Component {
               </div>
               <div id="navbar" className="navbar-collapse collapse">
                   <ul className="nav navbar-nav navbar-right">
-                    {/* */}
                     <li>
                       <button id="profilelink">
                         <a href="/profile" className="aproflink">Profile</a>
                       </button>
+                    </li>
+                    <li>
+                    <button>|</button>
                     </li>
                     <li>
                       <FacebookLogin
@@ -148,7 +155,7 @@ class Profile extends Component {
                       fields="name,email,picture"
                       callback={this.responseFacebook}
                       cssClass="my-facebook-button-class"
-                      icon="fa-facebook"
+                      icon=""
                       />
                     </li>
                   </ul>
@@ -158,18 +165,6 @@ class Profile extends Component {
       </Container>
       ) : (
       <Container>
-          <Myprofile style={{ marginTop: 30 }}
-            handleFormSubmit={this.handleFormSubmit}
-            handleInputChange={this.handleInputChange}
-            handleUpdate={this.handleUpdate}
-            id= {this.state.id}
-            name= {this.state.name}
-            email= {this.state.email}
-            bio= {this.state.bio}
-            image= {this.state.image}
-            zipcode= {this.state.zipcode}
-            activity= {this.state.activity}
-          />
           <nav className="navbar navbar-default navbar-fixed-top">
             <div className="container-fluid">
               
@@ -192,24 +187,27 @@ class Profile extends Component {
                       </button>
                     </li>
                     <li>
-            
-               
+                    <button>|</button>
                     </li>
-                  </ul>
-              </div>
-            </div>
-          </nav>
-
-
-                 <FacebookLogin
+                    <li>
+                      <FacebookLogin
                       appId="1271186439693753"
                       scope="public_profile,email"
                       autoLoad={true}
                       fields="name,email,picture"
                       callback={this.responseFacebook}
                       cssClass="my-facebook-button-class"
-                      icon="fa-facebook"
+                      icon=""
                       />
+                    </li>
+                  </ul>
+              </div>
+            </div>
+          </nav>
+          <br />
+          <br />
+          <h2>Please login to view your profile.</h2>
+
       </Container>
 
 
