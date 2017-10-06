@@ -22,11 +22,11 @@ var mailOptions = {
 	from: "",
 	subject : "You have a connection on Sidekick!",
 	html : "",
-	attachments :[{
-        filename: 'sidekick.jpg',
-        path: './client/build/static/media/sidekick.jpg',
-        cid: '00000001'
-    }]			
+	// attachments :[{
+ //        filename: 'sidekick.jpg',
+ //        path: '../client/build/static/media/sidekick.0daa81ee.svg',
+ //        cid: '00000001'
+ //    }]			
 };
 
 function sendSMTP(){
@@ -34,7 +34,7 @@ function sendSMTP(){
 	smtpTransport.sendMail(mailOptions, function(error, response){
 		if(error){
 			console.log(error);
-			res.end("error");
+			response.end("error");
 		}
 		else{
 			console.log("Message sent: " + JSON.stringify(response));
@@ -56,8 +56,8 @@ router.route("/send")
 		db.Sidekick_model.findById(req.body.idrecip, function(err, user){
 			mailOptions.to = user.email
 			mailOptions.html = ("<h2>" + "Hello " + user.name + "</h2>" + "<h3>"
-			 + "someone is trying to reach you about " + user.activity + " in " + user.zipcode + 
-			 "! </h3><h3>" + " You can connact the person at: " + mailOptions.from + "." + "</h3>" +
+			 + "A Sidekick user is interested in doing " + user.activity + " in " + user.zipcode + 
+			 " with you! </h3><h3>" + " Contact your new connection at: " + mailOptions.from + "." + "</h3>" +
 			 "<p>Please visit our Sidekick website: " + "https://sidekick1.herokuapp.com " + "for more activities and friends !")
 		})
 		.then(sendSMTP);
